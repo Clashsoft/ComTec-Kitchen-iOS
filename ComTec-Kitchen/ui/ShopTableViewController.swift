@@ -32,7 +32,7 @@ class ShopTableViewController: DictTableViewController<Item> {
 		let item = getItem(at: indexPath)
 
 		if Cart.shared.add(item: item) > 0 {
-			self.tabBarController?.tabBar.items?[1].badgeValue = "\(Cart.shared.getTotalAmount())"
+			CartTableViewController.refreshBadge(self.tabBarController)
 		}
 	}
 }
