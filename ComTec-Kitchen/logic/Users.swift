@@ -44,11 +44,12 @@ class Users {
 
 	// --------------- Communication ---------------
 
-	func refreshAll() {
-		users.removeAll()
+	func refreshAll(completion: (() -> Void)? = nil) {
 		api.getAllUsers { (data, error) in
 			if let json = data, let users = JSONTranslator.json2users(json: json) {
+				self.users.removeAll()
 				users.forEach(self.updateLocal)
+				completion?()
 			}
 		}
 	}
