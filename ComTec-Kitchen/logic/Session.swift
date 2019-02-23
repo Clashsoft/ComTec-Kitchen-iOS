@@ -36,6 +36,7 @@ class Session {
 				Users.shared.updateLocal(user: user)
 			}
 		}
+		return true
 	}
 
 	func register(name: String, mail: String, admin: Bool) {
@@ -117,7 +118,9 @@ class Session {
 		}
 
 		let encoder = PropertyListEncoder()
-		let data = encoder.encode(properties)
+		guard let data = try? encoder.encode(properties) else {
+			return
+		}
 
 		do {
 			try data.write(to: Session.archiveURL)
