@@ -8,60 +8,18 @@
 
 import UIKit
 
-class ShopTableViewController: UITableViewController {
-	var items: [String: [Item]] = [:]
-
-	private func itemSection(at section: Int) -> (header: String, items: [Item]) {
-		let (key, value) = items[items.index(items.startIndex, offsetBy: section)]
-		return (header: key, items: value)
+class ShopTableViewController: DictTableViewController<Item> {
+	override func refresh(completion: @escaping () -> Void) {
+		Items.shared.refreshAll(completion: completion)
 	}
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-
-		// Uncomment the following line to preserve selection between presentations
-		// self.clearsSelectionOnViewWillAppear = false
-
-		// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-		// self.navigationItem.leftBarButtonItem = self.editButtonItem
-
-		self.refreshControl = UIRefreshControl()
-		self.refreshControl?.addTarget(self, action: #selector(handleRefresh(_:)), for: .primaryActionTriggered)
-
-		self.refresh()
-	}
-
-	@objc func handleRefresh(_ refreshControl: UIRefreshControl) {
-		refresh()
-	}
-
-	func refresh() {
-		UIApplication.shared.isNetworkActivityIndicatorVisible = true
-		Items.shared.refreshAll() {
-			DispatchQueue.main.async {
-				self.items = Items.shared.getGrouped()
-				self.tableView.reloadData()
-				self.tableView.refreshControl?.endRefreshing()
-				UIApplication.shared.isNetworkActivityIndicatorVisible = false
-			}
-		}
-	}
-
-	override func numberOfSections(in tableView: UITableView) -> Int {
-		return items.count
-	}
-
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return itemSection(at: section).items.count
-	}
-
-	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		return itemSection(at: section).header
+	override func getDict() -> [String: [Item]] {
+		return Items.shared.getGrouped()
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "shopCell", for: indexPath)
-		let item = itemSection(at: indexPath.section).items[indexPath.row]
+		let item = getItem(at: indexPath)
 
 		cell.textLabel?.text = item.name
 		cell.detailTextLabel?.text = "\(item.amount) available for \(item.price) €"
