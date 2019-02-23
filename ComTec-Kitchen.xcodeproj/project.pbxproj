@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B0A106766B73A9C58FB5BC2 /* KitchenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1EF8EE5545B9D4B94297 /* KitchenAPI.swift */; };
+		1B0A11FC1859E76CA04C9F15 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1D0EBDBE919673605384 /* UsersTableViewController.swift */; };
 		1B0A1211D4ACD50DB4852EFB /* ShopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A18DE7D600E49DE8A360A /* ShopTableViewController.swift */; };
 		1B0A141424DCEB49839FE56D /* JSONTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1E8A6DB06EE099DD4DFC /* JSONTranslator.swift */; };
 		1B0A1485F08653ED38822D5B /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A19B4BE572B25D59E5583 /* Items.swift */; };
@@ -31,6 +32,7 @@
 		1B0A19B4BE572B25D59E5583 /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Items.swift; path = logic/Items.swift; sourceTree = "<group>"; };
 		1B0A19DC72237BCE441F393A /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = model/Item.swift; sourceTree = "<group>"; };
 		1B0A1C19E5BD6E5FB1FDF45D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = logic/Session.swift; sourceTree = "<group>"; };
+		1B0A1D0EBDBE919673605384 /* UsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UsersTableViewController.swift; path = ui/UsersTableViewController.swift; sourceTree = "<group>"; };
 		1B0A1E8A6DB06EE099DD4DFC /* JSONTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONTranslator.swift; path = model/JSONTranslator.swift; sourceTree = "<group>"; };
 		1B0A1EF8EE5545B9D4B94297 /* KitchenAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KitchenAPI.swift; path = server/KitchenAPI.swift; sourceTree = "<group>"; };
 		360B523B2221ECF600B842A0 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = ui/SignupViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				1B0A114EE5EE18B31CAAE880 /* Users.swift */,
 				1B0A18DE7D600E49DE8A360A /* ShopTableViewController.swift */,
 				360B523B2221ECF600B842A0 /* SignupViewController.swift */,
+				1B0A1D0EBDBE919673605384 /* UsersTableViewController.swift */,
 			);
 			path = "ComTec-Kitchen";
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				1B0A166C5F9F6781068D9490 /* User.swift in Sources */,
 				1B0A153FFA0D2F2271CC44EB /* Users.swift in Sources */,
 				1B0A1211D4ACD50DB4852EFB /* ShopTableViewController.swift in Sources */,
+				1B0A11FC1859E76CA04C9F15 /* UsersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
