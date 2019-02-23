@@ -64,7 +64,7 @@ class Cart {
 
 		for i in 0 ..< purchases.count {
 			var purchase = purchases[i]
-			if itemId != purchase._id {
+			if itemId != purchase.item_id {
 				continue
 			}
 
