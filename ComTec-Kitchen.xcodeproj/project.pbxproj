@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0A106766B73A9C58FB5BC2 /* KitchenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1EF8EE5545B9D4B94297 /* KitchenAPI.swift */; };
 		1B0A12714C5DF055C84E57DD /* ShopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A10B16BA3E93CDF512B52 /* ShopTableViewController.swift */; };
+		1B0A141424DCEB49839FE56D /* JSONTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1E8A6DB06EE099DD4DFC /* JSONTranslator.swift */; };
+		1B0A1485F08653ED38822D5B /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A19B4BE572B25D59E5583 /* Items.swift */; };
+		1B0A15026BACF135BFF0FFD2 /* HttpConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A16A45CE71B5C7A22742C /* HttpConnection.swift */; };
+		1B0A153FFA0D2F2271CC44EB /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A114EE5EE18B31CAAE880 /* Users.swift */; };
+		1B0A166C5F9F6781068D9490 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A13FE310EB13EDEEB40AC /* User.swift */; };
+		1B0A1C45155DFA3FD46872E0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A19DC72237BCE441F393A /* Item.swift */; };
+		1B0A1C894F7D07A663BCBDE1 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1C19E5BD6E5FB1FDF45D /* Session.swift */; };
 		363115242221A87B005DC2B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363115232221A87B005DC2B5 /* AppDelegate.swift */; };
 		3631152B2221A87C005DC2B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363115292221A87C005DC2B5 /* Main.storyboard */; };
 		3631152D2221A87D005DC2B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3631152C2221A87D005DC2B5 /* Assets.xcassets */; };
@@ -16,6 +24,14 @@
 
 /* Begin PBXFileReference section */
 		1B0A10B16BA3E93CDF512B52 /* ShopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTableViewController.swift; sourceTree = "<group>"; };
+		1B0A114EE5EE18B31CAAE880 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = logic/Users.swift; sourceTree = "<group>"; };
+		1B0A13FE310EB13EDEEB40AC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = model/User.swift; sourceTree = "<group>"; };
+		1B0A16A45CE71B5C7A22742C /* HttpConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpConnection.swift; path = server/HttpConnection.swift; sourceTree = "<group>"; };
+		1B0A19B4BE572B25D59E5583 /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Items.swift; path = logic/Items.swift; sourceTree = "<group>"; };
+		1B0A19DC72237BCE441F393A /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = model/Item.swift; sourceTree = "<group>"; };
+		1B0A1C19E5BD6E5FB1FDF45D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = logic/Session.swift; sourceTree = "<group>"; };
+		1B0A1E8A6DB06EE099DD4DFC /* JSONTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONTranslator.swift; path = model/JSONTranslator.swift; sourceTree = "<group>"; };
+		1B0A1EF8EE5545B9D4B94297 /* KitchenAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KitchenAPI.swift; path = server/KitchenAPI.swift; sourceTree = "<group>"; };
 		363115202221A87B005DC2B5 /* ComTec-Kitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ComTec-Kitchen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		363115232221A87B005DC2B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3631152A2221A87C005DC2B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +76,14 @@
 				3631152E2221A87D005DC2B5 /* LaunchScreen.storyboard */,
 				363115312221A87D005DC2B5 /* Info.plist */,
 				1B0A10B16BA3E93CDF512B52 /* ShopTableViewController.swift */,
+				1B0A19DC72237BCE441F393A /* Item.swift */,
+				1B0A19B4BE572B25D59E5583 /* Items.swift */,
+				1B0A1EF8EE5545B9D4B94297 /* KitchenAPI.swift */,
+				1B0A16A45CE71B5C7A22742C /* HttpConnection.swift */,
+				1B0A1E8A6DB06EE099DD4DFC /* JSONTranslator.swift */,
+				1B0A1C19E5BD6E5FB1FDF45D /* Session.swift */,
+				1B0A13FE310EB13EDEEB40AC /* User.swift */,
+				1B0A114EE5EE18B31CAAE880 /* Users.swift */,
 			);
 			path = "ComTec-Kitchen";
 			sourceTree = "<group>";
@@ -137,6 +161,14 @@
 			files = (
 				363115242221A87B005DC2B5 /* AppDelegate.swift in Sources */,
 				1B0A12714C5DF055C84E57DD /* ShopTableViewController.swift in Sources */,
+				1B0A1C45155DFA3FD46872E0 /* Item.swift in Sources */,
+				1B0A1485F08653ED38822D5B /* Items.swift in Sources */,
+				1B0A106766B73A9C58FB5BC2 /* KitchenAPI.swift in Sources */,
+				1B0A15026BACF135BFF0FFD2 /* HttpConnection.swift in Sources */,
+				1B0A141424DCEB49839FE56D /* JSONTranslator.swift in Sources */,
+				1B0A1C894F7D07A663BCBDE1 /* Session.swift in Sources */,
+				1B0A166C5F9F6781068D9490 /* User.swift in Sources */,
+				1B0A153FFA0D2F2271CC44EB /* Users.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
