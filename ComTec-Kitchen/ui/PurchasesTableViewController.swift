@@ -23,7 +23,7 @@ class PurchasesTableViewController: DictTableViewController<Purchase> {
 		let itemName = Items.shared.get(id: purchase.item_id)?.name ?? purchase.item_id
 
 		cell.textLabel?.text = "\(itemName)"
-		cell.detailTextLabel?.text = "\(purchase.created ?? "") | \(purchase.amount) * \(purchase.itemPrice) = \(purchase.total)"
+		cell.detailTextLabel?.text = "\(purchase.created ?? "") | \(purchase.amount) * \(purchase.itemPrice.€) = \(purchase.total.€)"
 
 		return cell
 	}

@@ -22,8 +22,14 @@ class ShopTableViewController: DictTableViewController<Item> {
 		let item = getItem(at: indexPath)
 
 		cell.textLabel?.text = item.name
-		cell.detailTextLabel?.text = "\(item.amount) available for \(item.price) €"
+		cell.detailTextLabel?.text = "\(item.amount) available for \(item.price.€)"
 
 		return cell
+	}
+}
+
+extension Double {
+	var €: String {
+		return String(format: "%.2f €", self)
 	}
 }
