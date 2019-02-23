@@ -25,6 +25,10 @@ class JSONTranslator {
 	static func item2json(item: Item) -> Data? { return encode(item) }
 	static func json2item(json: Data) -> Item? { return decode(Item.self, from: json) }
 	static func json2items(json: Data) -> [Item]? { return decode([Item].self, from: json) }
+	// --------------- Purchase ---------------
+	static func purchase2json(purchase: Purchase) -> Data? { return encode(purchase) }
+	static func json2purchase(json: Data) -> Purchase? { return decode(Purchase.self, from: json) }
+	static func json2purchases(json: Data) -> [Purchase]? { return decode([Purchase].self, from: json) }
 	// @formatter:on
 }
 
