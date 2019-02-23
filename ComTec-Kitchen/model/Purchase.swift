@@ -6,7 +6,7 @@
 import Foundation
 
 struct Purchase: Codable {
-	var _id: String
+	var _id: String!
 	var created: String!
 	var user_id: String
 	var item_id: String
@@ -17,14 +17,19 @@ struct Purchase: Codable {
 
 	var itemPrice: Double {
 		get {
+			return total / Double(amount)
+		}
+		set {
+			total = newValue * Double(amount)
+		}
+	}
+
+	var total: Double {
+		get {
 			return price
 		}
 		set {
 			price = newValue
 		}
-	}
-
-	var total: Double {
-		return itemPrice * Double(amount)
 	}
 }
