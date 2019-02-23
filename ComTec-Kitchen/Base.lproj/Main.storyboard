@@ -247,7 +247,19 @@
                             <outlet property="delegate" destination="n9C-40-LFQ" id="pWE-J2-kkR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Cart" id="YXj-Ml-j7j"/>
+                    <navigationItem key="navigationItem" title="Cart" id="YXj-Ml-j7j">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="T8Q-ta-X7v">
+                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="clearClicked:" destination="n9C-40-LFQ" id="ul5-JO-RH5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="Ez2-fG-rAl">
+                            <connections>
+                                <action selector="submitClicked:" destination="n9C-40-LFQ" id="xt5-lm-uJ3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xs8-AB-JGa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
