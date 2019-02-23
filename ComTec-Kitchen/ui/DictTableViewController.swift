@@ -29,7 +29,9 @@ class DictTableViewController<T> : UITableViewController {
 
 		self.refreshControl = UIRefreshControl()
 		self.refreshControl?.addTarget(self, action: #selector(handleRefresh(_:)), for: .primaryActionTriggered)
+	}
 
+	override func viewDidAppear(_ animated: Bool) {
 		self.refresh()
 	}
 
