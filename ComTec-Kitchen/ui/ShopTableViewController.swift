@@ -9,7 +9,7 @@
 import UIKit
 
 class ShopTableViewController: UITableViewController {
-	var items: [String:[Item]] = [:]
+	var items: [String: [Item]] = [:]
 
 	private func itemSection(at section: Int) -> (header: String, items: [Item]) {
 		let (key, value) = items[items.index(items.startIndex, offsetBy: section)]
@@ -25,10 +25,24 @@ class ShopTableViewController: UITableViewController {
 		// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
 		// self.navigationItem.leftBarButtonItem = self.editButtonItem
 
+		self.refreshControl = UIRefreshControl()
+		self.refreshControl?.addTarget(self, action: #selector(handleRefresh(_:)), for: .primaryActionTriggered)
+
+		self.refresh()
+	}
+
+	@objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+		refresh()
+	}
+
+	func refresh() {
+		UIApplication.shared.isNetworkActivityIndicatorVisible = true
 		Items.shared.refreshAll() {
 			DispatchQueue.main.async {
 				self.items = Items.shared.getGrouped()
 				self.tableView.reloadData()
+				self.tableView.refreshControl?.endRefreshing()
+				UIApplication.shared.isNetworkActivityIndicatorVisible = false
 			}
 		}
 	}
