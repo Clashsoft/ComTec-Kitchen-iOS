@@ -16,6 +16,7 @@
 		1B0A166C5F9F6781068D9490 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A13FE310EB13EDEEB40AC /* User.swift */; };
 		1B0A1C45155DFA3FD46872E0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A19DC72237BCE441F393A /* Item.swift */; };
 		1B0A1C894F7D07A663BCBDE1 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1C19E5BD6E5FB1FDF45D /* Session.swift */; };
+		360B523C2221ECF600B842A0 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B523B2221ECF600B842A0 /* SignupViewController.swift */; };
 		363115242221A87B005DC2B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363115232221A87B005DC2B5 /* AppDelegate.swift */; };
 		3631152B2221A87C005DC2B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363115292221A87C005DC2B5 /* Main.storyboard */; };
 		3631152D2221A87D005DC2B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3631152C2221A87D005DC2B5 /* Assets.xcassets */; };
@@ -32,6 +33,7 @@
 		1B0A1C19E5BD6E5FB1FDF45D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = logic/Session.swift; sourceTree = "<group>"; };
 		1B0A1E8A6DB06EE099DD4DFC /* JSONTranslator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONTranslator.swift; path = model/JSONTranslator.swift; sourceTree = "<group>"; };
 		1B0A1EF8EE5545B9D4B94297 /* KitchenAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KitchenAPI.swift; path = server/KitchenAPI.swift; sourceTree = "<group>"; };
+		360B523B2221ECF600B842A0 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = ui/SignupViewController.swift; sourceTree = "<group>"; };
 		363115202221A87B005DC2B5 /* ComTec-Kitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ComTec-Kitchen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		363115232221A87B005DC2B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3631152A2221A87C005DC2B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				1B0A13FE310EB13EDEEB40AC /* User.swift */,
 				1B0A114EE5EE18B31CAAE880 /* Users.swift */,
 				1B0A18DE7D600E49DE8A360A /* ShopTableViewController.swift */,
+				360B523B2221ECF600B842A0 /* SignupViewController.swift */,
 			);
 			path = "ComTec-Kitchen";
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			files = (
 				363115242221A87B005DC2B5 /* AppDelegate.swift in Sources */,
 				1B0A1C45155DFA3FD46872E0 /* Item.swift in Sources */,
+				360B523C2221ECF600B842A0 /* SignupViewController.swift in Sources */,
 				1B0A1485F08653ED38822D5B /* Items.swift in Sources */,
 				1B0A106766B73A9C58FB5BC2 /* KitchenAPI.swift in Sources */,
 				1B0A15026BACF135BFF0FFD2 /* HttpConnection.swift in Sources */,
