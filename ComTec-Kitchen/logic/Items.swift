@@ -46,11 +46,12 @@ class Items {
 
 	// --------------- Communication ---------------
 
-	func refreshAll() {
-		items.removeAll()
+	func refreshAll(completion: (() -> Void)? = nil) {
 		api.getAllItems { (data, error) in
 			if let json = data, let items = JSONTranslator.json2items(json: json) {
+				self.items.removeAll()
 				items.forEach(self.updateLocal)
+				completion?()
 			}
 		}
 	}
