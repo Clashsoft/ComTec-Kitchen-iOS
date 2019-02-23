@@ -26,6 +26,15 @@ class ShopTableViewController: DictTableViewController<Item> {
 
 		return cell
 	}
+
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: false)
+		let item = getItem(at: indexPath)
+
+		if Cart.shared.add(item: item) > 0 {
+			self.tabBarController?.tabBar.items?[1].badgeValue = "\(Cart.shared.getTotalAmount())"
+		}
+	}
 }
 
 extension Double {
