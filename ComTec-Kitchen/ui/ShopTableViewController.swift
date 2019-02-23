@@ -9,6 +9,12 @@
 import UIKit
 
 class ShopTableViewController: UITableViewController {
+	var items: [String:[Item]] = [:]
+
+	private func itemSection(at section: Int) -> (header: String, items: [Item]) {
+		let (key, value) = items[items.index(items.startIndex, offsetBy: section)]
+		return (header: key, items: value)
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -17,16 +23,35 @@ class ShopTableViewController: UITableViewController {
 		// self.clearsSelectionOnViewWillAppear = false
 
 		// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-		self.navigationItem.leftBarButtonItem = self.editButtonItem
+		// self.navigationItem.leftBarButtonItem = self.editButtonItem
+
+		Items.shared.refreshAll() {
+			DispatchQueue.main.async {
+				self.items = Items.shared.getGrouped()
+				self.tableView.reloadData()
+			}
+		}
 	}
 
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		// #warning Incomplete implementation, return the number of sections
-		return 0
+		return items.count
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		// #warning Incomplete implementation, return the number of rows
-		return 0
+		return itemSection(at: section).items.count
+	}
+
+	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		return itemSection(at: section).header
+	}
+
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell = tableView.dequeueReusableCell(withIdentifier: "shopCell", for: indexPath)
+		let item = itemSection(at: indexPath.section).items[indexPath.row]
+
+		cell.textLabel?.text = item.name
+		cell.detailTextLabel?.text = "\(item.amount) available for \(item.price) €"
+
+		return cell
 	}
 }
