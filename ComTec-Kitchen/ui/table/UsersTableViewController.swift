@@ -87,8 +87,29 @@ class UsersTableViewController: DictTableViewController<User>, UISearchResultsUp
 		return cell
 	}
 
+	// --------------- Cell Selection ---------------
+
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		performSegue(withIdentifier: "EditUser", sender: self)
+	}
+
+	// --------------- Cell Deletion ---------------
+
+	override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+		return true
+	}
+
+	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		if editingStyle != .delete {
+			return
+		}
+
+		let user = getItem(at: indexPath)
+		Users.shared.delete(user: user) {
+			DispatchQueue.main.async {
+				self.reloadAndDeleteRow(at: indexPath)
+			}
+		}
 	}
 
 	// --------------- Navigation ---------------
