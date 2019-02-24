@@ -30,6 +30,8 @@
 		3631152B2221A87C005DC2B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363115292221A87C005DC2B5 /* Main.storyboard */; };
 		3631152D2221A87D005DC2B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3631152C2221A87D005DC2B5 /* Assets.xcassets */; };
 		363115302221A87D005DC2B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3631152E2221A87D005DC2B5 /* LaunchScreen.storyboard */; };
+		36DED8D22222ACC9001B223D /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36DED8D12222ACC9001B223D /* ItemCell.xib */; };
+		36DED8D42222AE3E001B223D /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DED8D32222AE3E001B223D /* ItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		3631152C2221A87D005DC2B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3631152F2221A87D005DC2B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		363115312221A87D005DC2B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36DED8D12222ACC9001B223D /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ItemCell.xib; path = ui/table/ItemCell.xib; sourceTree = "<group>"; };
+		36DED8D32222AE3E001B223D /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = ui/table/ItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,8 @@
 				1B0A16B263F94795EB627696 /* CartTableViewController.swift */,
 				1B0A15C0DE7649CCED4C49C8 /* Images.swift */,
 				1B0A1409DA481FCF94620146 /* LaunchViewController.swift */,
+				36DED8D12222ACC9001B223D /* ItemCell.xib */,
+				36DED8D32222AE3E001B223D /* ItemTableViewCell.swift */,
 			);
 			path = "ComTec-Kitchen";
 			sourceTree = "<group>";
@@ -177,6 +183,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				363115302221A87D005DC2B5 /* LaunchScreen.storyboard in Resources */,
+				36DED8D22222ACC9001B223D /* ItemCell.xib in Resources */,
 				3631152D2221A87D005DC2B5 /* Assets.xcassets in Resources */,
 				3631152B2221A87C005DC2B5 /* Main.storyboard in Resources */,
 			);
@@ -208,6 +215,7 @@
 				1B0A114EDCE38F60C597DB8F /* DictTableViewController.swift in Sources */,
 				1B0A14A297815B0503A6FEDD /* CartTableViewController.swift in Sources */,
 				1B0A10CCF1E389004A8D9997 /* Images.swift in Sources */,
+				36DED8D42222AE3E001B223D /* ItemTableViewCell.swift in Sources */,
 				1B0A1D4E25C7D72D28050A64 /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
