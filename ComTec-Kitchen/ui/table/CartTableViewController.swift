@@ -31,7 +31,7 @@ class CartTableViewController: DictTableViewController<Purchase> {
 	}
 
 	override func getSections() -> [Section<Purchase>] {
-		return [("", Cart.shared.purchases)]
+		return Cart.shared.isEmpty() ? [] : [("", Cart.shared.purchases)]
 	}
 
 	@IBAction func submitClicked(_ sender: Any) {
@@ -99,8 +99,7 @@ class CartTableViewController: DictTableViewController<Purchase> {
 		if editingStyle == .delete {
 			let purchase = getItem(at: indexPath)
 			Cart.shared.remove(purchase: purchase)
-			sections = getSections()
-			tableView.deleteRows(at: [indexPath], with: .automatic)
+			reloadAndDeleteRow(at: indexPath)
 		}
 	}
 }

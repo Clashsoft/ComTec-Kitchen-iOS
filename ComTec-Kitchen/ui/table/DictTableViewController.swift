@@ -49,11 +49,27 @@ class DictTableViewController<T> : UITableViewController {
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true
 		refresh {
 			DispatchQueue.main.async {
-				self.sections = self.getSections()
-				self.tableView.reloadData()
+				self.reload()
 				self.tableView.refreshControl?.endRefreshing()
 				UIApplication.shared.isNetworkActivityIndicatorVisible = false
 			}
+		}
+	}
+
+	func reload() {
+		sections = getSections()
+		tableView.reloadData()
+	}
+
+	func reloadAndDeleteRow(at indexPath: IndexPath) {
+		if sections[indexPath.section].items.count == 1 {
+			sections = getSections()
+			// deleting the last item, remove the entire section
+			tableView.deleteSections([indexPath.section], with: .automatic)
+		}
+		else {
+			sections = getSections()
+			tableView.deleteRows(at: [indexPath], with: .automatic)
 		}
 	}
 

@@ -133,8 +133,7 @@ class ShopTableViewController: DictTableViewController<Item> {
 		else if tableView.isEditing {
 			Items.shared.delete(item: item) {
 				DispatchQueue.main.async {
-					self.sections = self.getSections()
-					tableView.deleteRows(at: [indexPath], with: .automatic)
+					self.reloadAndDeleteRow(at: indexPath)
 				}
 			}
 		}
