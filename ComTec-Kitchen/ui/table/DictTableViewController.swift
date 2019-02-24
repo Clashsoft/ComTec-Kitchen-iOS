@@ -19,6 +19,17 @@ class DictTableViewController<T> : UITableViewController {
 		return dictSection(at: indexPath.section).items[indexPath.row]
 	}
 
+	func indexPath(where predicate: (String, T) -> Bool) -> IndexPath? {
+		for (sectionIndex, section) in sections.enumerated() {
+			for (rowIndex, item) in section.items.enumerated() {
+				if predicate(section.header, item) {
+					return IndexPath(row: rowIndex, section: sectionIndex)
+				}
+			}
+		}
+		return nil
+	}
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
