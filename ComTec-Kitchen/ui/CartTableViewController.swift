@@ -99,7 +99,8 @@ class CartTableViewController: DictTableViewController<Purchase> {
 		if editingStyle == .delete {
 			let purchase = getItem(at: indexPath)
 			Cart.shared.remove(purchase: purchase)
-			self.refresh()
+			dict = getDict()
+			tableView.deleteRows(at: [indexPath], with: .automatic)
 		}
 	}
 }
