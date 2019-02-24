@@ -10,8 +10,13 @@ import UIKit
 
 class CartTableViewController: DictTableViewController<Purchase> {
 	static func refreshBadge(_ tabBarController: UITabBarController?) {
-		let badgeValue = Cart.shared.isEmpty() ? nil : "\(Cart.shared.getTotalAmount())"
-		tabBarController?.tabBar.items?[1].badgeValue = badgeValue
+		let empty = Cart.shared.isEmpty()
+		let badgeValue = empty ? nil : "\(Cart.shared.getTotalAmount())"
+		let barItem = tabBarController?.tabBar.items?[1]
+
+		barItem?.badgeValue = badgeValue
+		barItem?.image = empty ? UIImage.cart : UIImage.cartBuying
+		barItem?.selectedImage = empty ? UIImage.cartFilled : UIImage.cartBuyingFilled
 	}
 
 	override func refresh(completion: @escaping () -> Void) {
