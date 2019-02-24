@@ -100,6 +100,7 @@ class CartTableViewController: DictTableViewController<Purchase> {
 			let purchase = getItem(at: indexPath)
 			Cart.shared.remove(purchase: purchase)
 			reloadAndDeleteRow(at: indexPath)
+			CartTableViewController.refreshBadge(tabBarController)
 		}
 	}
 }
