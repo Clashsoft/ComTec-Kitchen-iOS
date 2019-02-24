@@ -28,20 +28,6 @@ class Users {
 		return Array(users.values)
 	}
 
-	func getSectioned() -> [Section<User>] {
-		let grouped: [String: [User]] = Dictionary(grouping: users.values) { (user: User) in
-			String(user.name.first ?? "#").uppercased()
-		}
-		let sorted: [(String, [User])] = grouped.sorted {
-			$0.key < $1.key
-		}
-		return sorted.map {
-			(header: $0.0, items: $0.1.sorted {
-				$0.name < $1.name
-			})
-		}
-	}
-
 	// --------------- Modification ---------------
 
 	func updateLocal(user: User) {
@@ -84,5 +70,21 @@ class Users {
 	func delete(user: User) {
 		api.deleteUser(id: user._id, completion: ignoreResult)
 		deleteLocal(user: user)
+	}
+}
+
+extension Sequence where Element == User {
+	func sectioned() -> [Section<User>] {
+		let grouped: [String: [User]] = Dictionary(grouping: self) { (user: User) in
+			String(user.name.first ?? "#").uppercased()
+		}
+		let sorted: [(String, [User])] = grouped.sorted {
+			$0.key < $1.key
+		}
+		return sorted.map {
+			(header: $0.0, items: $0.1.sorted {
+				$0.name < $1.name
+			})
+		}
 	}
 }

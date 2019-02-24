@@ -8,13 +8,51 @@
 
 import UIKit
 
-class UsersTableViewController: DictTableViewController<User> {
+class UsersTableViewController: DictTableViewController<User>, UISearchResultsUpdating {
+	// =============== Fields ===============
+
+	let searchController = UISearchController(searchResultsController: nil)
+
+	// =============== Methods ===============
+
+	// --------------- View Load ---------------
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+
+		// Setup the Search Controller
+		searchController.searchResultsUpdater = self
+		searchController.obscuresBackgroundDuringPresentation = false
+		searchController.searchBar.placeholder = "Search Users"
+		navigationItem.searchController = searchController
+		definesPresentationContext = true
+	}
+
+	// --------------- Search ---------------
+
+	func updateSearchResults(for searchController: UISearchController) {
+		sections = getSections()
+		tableView.reloadData()
+	}
+
+	// --------------- Refresh ---------------
+
 	override func refresh(completion: @escaping () -> Void) {
 		Users.shared.refreshAll(completion: completion)
 	}
 
 	override func getSections() -> [Section<User>] {
-		return Users.shared.getSectioned()
+		let searchText = searchController.searchBar.text ?? ""
+
+		var users = Users.shared.getAll()
+		if !searchText.isEmpty {
+			users.removeAll {
+				!$0.name.localizedCaseInsensitiveContains(searchText)
+				&& !$0.mail.localizedCaseInsensitiveContains(searchText)
+			}
+		}
+
+		return users.sectioned()
 	}
 
 	// --------------- Index ---------------
