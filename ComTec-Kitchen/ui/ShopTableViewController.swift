@@ -68,20 +68,61 @@ class ShopTableViewController: DictTableViewController<Item> {
 	// --------------- Cell Selection ---------------
 
 	override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-		return true
+		if tableView.isEditing {
+			return true
+		}
+		else {
+			let item = getItem(at: indexPath)
+			return Cart.shared.getAmount(of: item) > 0
+		}
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		if tableView.isEditing {
 			self.performSegue(withIdentifier: "EditItem", sender: self)
+		}
+		else {
+			let item = getItem(at: indexPath)
+
+			tableView.deselectRow(at: indexPath, animated: false)
+
+			if Cart.shared.add(item: item) > 0 {
+				tableView.reloadRows(at: [indexPath], with: .automatic)
+				CartTableViewController.refreshBadge(self.tabBarController)
+			}
+		}
+	}
+
+	var editingRow: Bool = false
+
+	override func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+		editingRow = true
+	}
+
+	override func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+		editingRow = false
+	}
+
+	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+		if editingStyle != .delete {
 			return
 		}
 
-		tableView.deselectRow(at: indexPath, animated: false)
 		let item = getItem(at: indexPath)
 
-		if Cart.shared.add(item: item) > 0 {
-			CartTableViewController.refreshBadge(self.tabBarController)
+		if editingRow {
+			if Cart.shared.remove(item: item) {
+				tableView.reloadRows(at: [indexPath], with: .automatic)
+				CartTableViewController.refreshBadge(self.tabBarController)
+			}
+		}
+		else if tableView.isEditing {
+			Items.shared.delete(item: item) {
+				DispatchQueue.main.async {
+					self.dict = self.getDict()
+					tableView.deleteRows(at: [indexPath], with: .automatic)
+				}
+			}
 		}
 	}
 
