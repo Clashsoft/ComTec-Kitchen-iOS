@@ -71,4 +71,6 @@ class DictTableViewController<T> : UITableViewController {
 		return dictSection(at: section).header
 	}
 
+	@IBAction func unwindTo(_ unwindSegue: UIStoryboardSegue) {
+	}
 }
