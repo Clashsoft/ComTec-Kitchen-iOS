@@ -481,7 +481,7 @@
         <scene sceneID="gGN-fF-9LG">
             <objects>
                 <navigationController id="HwD-dc-Ptn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cart" image="cart-filled" selectedImage="cart-filled" id="YwO-tf-5am"/>
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart" selectedImage="cart-filled" id="YwO-tf-5am"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gyr-hk-xwe">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -661,6 +661,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart" width="37.5" height="37.5"/>
         <image name="cart-filled" width="37.5" height="37.5"/>
         <image name="fridge" width="37.5" height="37.5"/>
         <image name="fridge-filled" width="37.5" height="37.5"/>
