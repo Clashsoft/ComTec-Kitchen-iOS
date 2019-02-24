@@ -110,6 +110,12 @@ class Cart {
 		return purchases.count != countBefore
 	}
 
+	func remove(purchase: Purchase) {
+		purchases.removeAll { element in
+			element.item_id == purchase.item_id
+		}
+	}
+
 	// --------------- Communication ---------------
 
 	func submit() {
