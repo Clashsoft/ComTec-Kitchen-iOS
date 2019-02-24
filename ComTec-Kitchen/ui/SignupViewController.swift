@@ -30,7 +30,7 @@ class SignupViewController: UIViewController {
 		if segue.identifier == "SignupSubmit" {
 			let name = nameTextField.text!
 			let mail = mailTextField.text!
-			let admin = adminSwitch.isSelected
+			let admin = adminSwitch.isOn
 			Session.shared.register(name: name, mail: mail, admin: admin)
 		}
     }
