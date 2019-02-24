@@ -48,7 +48,12 @@ class ShopTableViewController: DictTableViewController<Item> {
 		let cartAmount = Cart.shared.getAmount(of: item)
 
 		cell.nameLabel.text = item.name
-		cell.descriptionLabel.text = "\(item.amount) available"
+		if item.amount <= 0 {
+			cell.descriptionLabel.text = "not available"
+		}
+		else {
+			cell.descriptionLabel.text = "\(item.amount) available"
+		}
 
 		switch cartAmount {
 			case 0:
@@ -89,6 +94,16 @@ class ShopTableViewController: DictTableViewController<Item> {
 			if Cart.shared.add(item: item) > 0 {
 				tableView.reloadRows(at: [indexPath], with: .automatic)
 				CartTableViewController.refreshBadge(self.tabBarController)
+			}
+			else {
+				guard let cell = tableView.cellForRow(at: indexPath) as? ItemTableViewCell else {
+					return
+				}
+
+				UIView.animate(withDuration: 0.2) {
+					cell.descriptionLabel.transform = CGAffineTransform(scaleX: 2, y: 2)
+					cell.descriptionLabel.transform = .identity
+				}
 			}
 		}
 	}
