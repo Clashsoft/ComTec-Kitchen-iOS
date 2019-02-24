@@ -20,3 +20,15 @@ class ItemTableViewCell: UITableViewCell {
 	@IBOutlet weak var topRightLabel: UILabel!
 	@IBOutlet weak var bottomRightLabel: UILabel!
 }
+
+extension UITableView {
+	func installItemCell() {
+		register(.itemCell, forCellReuseIdentifier: "ItemCell")
+		rowHeight = ItemTableViewCell.height
+		estimatedRowHeight = ItemTableViewCell.height
+	}
+
+	func dequeueItemCell(for indexPath: IndexPath) -> ItemTableViewCell {
+		return dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemTableViewCell
+	}
+}
