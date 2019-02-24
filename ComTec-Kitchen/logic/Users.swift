@@ -50,26 +50,31 @@ class Users {
 		}
 	}
 
-	func refresh(user: User) {
+	func refresh(user: User, completion: (() -> Void)? = nil) {
 		api.getUser(id: user._id) { (data, error) in
 			if let json = data, let user = JSONTranslator.json2user(json: json) {
 				self.updateLocal(user: user)
+				completion?()
 			}
 		}
 	}
 
-	func update(user: User) {
+	func update(user: User, completion: (() -> Void)? = nil) {
 		guard let json = JSONTranslator.user2json(user: user) else {
 			return
 		}
 
-		api.updateUser(id: user._id, json: json, completion: ignoreResult)
-		updateLocal(user: user)
+		api.updateUser(id: user._id, json: json) { (_, _) in
+			self.updateLocal(user: user)
+			completion?()
+		}
 	}
 
-	func delete(user: User) {
-		api.deleteUser(id: user._id, completion: ignoreResult)
-		deleteLocal(user: user)
+	func delete(user: User, completion: (() -> Void)? = nil) {
+		api.deleteUser(id: user._id) { (_, _) in
+			self.deleteLocal(user: user)
+			completion?()
+		}
 	}
 }
 
