@@ -56,30 +56,34 @@ class Items {
 		}
 	}
 
-	func create(item: Item) {
+	func create(item: Item, completion: (() -> Void)? = nil) {
 		guard let itemJson = JSONTranslator.item2json(item: item) else {
 			return
 		}
 		api.createItem(json: itemJson) { (data, error) in
 			if let json = data, let item = JSONTranslator.json2item(json: json) {
 				self.updateLocal(item: item)
+				completion?()
 			}
 		}
 	}
 
-	func update(item: Item) {
+	func update(item: Item, completion: (() -> Void)? = nil) {
 		guard let json = JSONTranslator.item2json(item: item) else {
 			return
 		}
 		api.updateItem(id: item._id, json: json) { (data, error) in
 			if let json = data, let item = JSONTranslator.json2item(json: json) {
 				self.updateLocal(item: item)
+				completion?()
 			}
 		}
 	}
 
-	func delete(item: Item) {
-		api.deleteItem(id: item._id, completion: ignoreResult)
-		deleteLocal(item: item)
+	func delete(item: Item, completion: (() -> Void)? = nil) {
+		api.deleteItem(id: item._id) { (_, _) in
+			self.deleteLocal(item: item)
+			completion?()
+		}
 	}
 }
