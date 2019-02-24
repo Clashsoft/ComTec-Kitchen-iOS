@@ -24,6 +24,7 @@
 		1B0A1AF29BC1FBF858ACF087 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1887773C9AA47A552ADE /* Purchase.swift */; };
 		1B0A1C45155DFA3FD46872E0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A19DC72237BCE441F393A /* Item.swift */; };
 		1B0A1C894F7D07A663BCBDE1 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1C19E5BD6E5FB1FDF45D /* Session.swift */; };
+		1B0A1D4E25C7D72D28050A64 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1409DA481FCF94620146 /* LaunchViewController.swift */; };
 		360B523C2221ECF600B842A0 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B523B2221ECF600B842A0 /* SignupViewController.swift */; };
 		363115242221A87B005DC2B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363115232221A87B005DC2B5 /* AppDelegate.swift */; };
 		3631152B2221A87C005DC2B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363115292221A87C005DC2B5 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		1B0A114EE5EE18B31CAAE880 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = logic/Users.swift; sourceTree = "<group>"; };
 		1B0A13FE310EB13EDEEB40AC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = model/User.swift; sourceTree = "<group>"; };
+		1B0A1409DA481FCF94620146 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = ui/LaunchViewController.swift; sourceTree = "<group>"; };
 		1B0A14CBC8D2C675EAE8D9BE /* DictTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictTableViewController.swift; path = ui/DictTableViewController.swift; sourceTree = "<group>"; };
 		1B0A15C0DE7649CCED4C49C8 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Images.swift; path = ui/Images.swift; sourceTree = "<group>"; };
 		1B0A16A45CE71B5C7A22742C /* HttpConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpConnection.swift; path = server/HttpConnection.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				1B0A14CBC8D2C675EAE8D9BE /* DictTableViewController.swift */,
 				1B0A16B263F94795EB627696 /* CartTableViewController.swift */,
 				1B0A15C0DE7649CCED4C49C8 /* Images.swift */,
+				1B0A1409DA481FCF94620146 /* LaunchViewController.swift */,
 			);
 			path = "ComTec-Kitchen";
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				1B0A114EDCE38F60C597DB8F /* DictTableViewController.swift in Sources */,
 				1B0A14A297815B0503A6FEDD /* CartTableViewController.swift in Sources */,
 				1B0A10CCF1E389004A8D9997 /* Images.swift in Sources */,
+				1B0A1D4E25C7D72D28050A64 /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

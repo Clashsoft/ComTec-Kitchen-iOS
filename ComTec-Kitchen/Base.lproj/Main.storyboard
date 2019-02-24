@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UPF-MI-71G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d8A-pc-KVx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -285,7 +285,6 @@
         <!--Purchase History-->
         <scene sceneID="jeK-EF-1Ao">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LQH-YW-Z0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Xut-pb-6nb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Purchase History" image="history" selectedImage="history-filled" id="u6p-KJ-lQh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g8J-Js-EFa">
@@ -296,6 +295,7 @@
                         <segue destination="lYC-lJ-PeM" kind="relationship" relationship="rootViewController" id="Xbf-PH-SRp"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LQH-YW-Z0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1988" y="-336"/>
         </scene>
@@ -315,6 +315,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="58e-2u-dLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="558" y="-337"/>
+        </scene>
+        <!--Launch View Controller-->
+        <scene sceneID="yry-vF-LKq">
+            <objects>
+                <viewController id="d8A-pc-KVx" customClass="LaunchViewController" customModule="ComTec_Kitchen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Otu-gE-AxB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Egc-Jz-sn0"/>
+                    </view>
+                    <connections>
+                        <segue destination="49e-Tb-3d3" kind="showDetail" identifier="AutoLogin" id="kHD-QL-EgV"/>
+                        <segue destination="UPF-MI-71G" kind="show" identifier="ShowSignup" id="H5X-1M-85X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WZA-YZ-mck" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="558" y="-1165"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="BL0-9X-eOd">
@@ -401,12 +420,11 @@
                         <outlet property="mailTextField" destination="tq3-8c-TB4" id="eMo-Yq-nHD"/>
                         <outlet property="nameTextField" destination="TrY-0a-Rgt" id="r05-lC-2E1"/>
                         <outlet property="submitButton" destination="7ZJ-Dc-b9y" id="FKP-sx-vxw"/>
-                        <segue destination="49e-Tb-3d3" kind="showDetail" identifier="AutoLogin" id="Hig-dX-I6p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="265-1p-oSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1095" y="-1165"/>
+            <point key="canvasLocation" x="1273" y="-1655"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -442,6 +460,6 @@
         <image name="users-filled" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0Td-Wf-5fH"/>
+        <segue reference="kHD-QL-EgV"/>
     </inferredMetricsTieBreakers>
 </document>

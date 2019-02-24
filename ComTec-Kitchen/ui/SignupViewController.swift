@@ -18,12 +18,6 @@ class SignupViewController: UIViewController {
         super.viewDidLoad()
     }
 
-	override func viewDidAppear(_ animated: Bool) {
-		if Session.shared.tryLogin() {
-			self.performSegue(withIdentifier: "AutoLogin", sender: self)
-		}
-	}
-
 	@IBAction func editingChanged(_ sender: UITextField) {
 		let nameEntered = !(nameTextField.text ?? "").isEmpty
 		let mailEntered = !(mailTextField.text ?? "").isEmpty
