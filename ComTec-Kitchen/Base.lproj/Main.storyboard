@@ -30,15 +30,15 @@
         <scene sceneID="Gn6-6e-CoG">
             <objects>
                 <tableViewController title="Edit Item" id="xl1-Jw-nCQ" customClass="EditItemTableViewController" customModule="ComTec_Kitchen" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="AYX-gd-G6c">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" estimatedRowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="AYX-gd-G6c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
                             <tableViewSection headerTitle="Barcode / ID" id="SA0-33-znE">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uuU-PR-Upv">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uuU-PR-Upv" id="VWz-1Q-5Yo">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -67,7 +67,7 @@
                             <tableViewSection headerTitle="Name" id="m3G-rz-Qa7">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="sXJ-1m-UCk">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sXJ-1m-UCk" id="9dJ-F3-9qC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -96,7 +96,7 @@
                             <tableViewSection headerTitle="Kind" id="whS-WJ-DCR">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Dsa-Zy-Zeg">
-                                        <rect key="frame" x="0.0" y="172" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="255.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dsa-Zy-Zeg" id="jd6-zj-Dac">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -125,7 +125,7 @@
                             <tableViewSection headerTitle="Price" id="fFf-vW-aLR">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="kFf-N5-zEh">
-                                        <rect key="frame" x="0.0" y="244" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="355.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kFf-N5-zEh" id="vNB-i3-dxc">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -154,7 +154,7 @@
                             <tableViewSection headerTitle="Amount" id="eDM-Pb-mvB">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QMS-ok-Lft">
-                                        <rect key="frame" x="0.0" y="316" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="455.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QMS-ok-Lft" id="Drg-Y6-qNS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -186,7 +186,7 @@
                             <outlet property="delegate" destination="xl1-Jw-nCQ" id="6ln-Jh-Cwn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="kPg-85-MFL">
+                    <navigationItem key="navigationItem" title="Edit Item" id="kPg-85-MFL">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="1UV-pZ-AAn">
                             <connections>
                                 <segue destination="IL7-vU-0nd" kind="unwind" identifier="CancelUnwind" unwindAction="unwindTo:" id="W2i-om-iEf"/>

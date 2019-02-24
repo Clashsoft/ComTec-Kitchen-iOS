@@ -26,7 +26,7 @@ class EditItemTableViewController: UITableViewController {
 			return !idTextField.isEnabled
 		}
 		set {
-			navigationController?.title = newValue ? "Edit Item" : "Add Item"
+			title = newValue ? "Edit Item" : "Add Item"
 			idTextField.isEnabled = !newValue
 		}
 	}
@@ -56,6 +56,9 @@ class EditItemTableViewController: UITableViewController {
 			kindTextField.text = item.kind
 			priceTextField.text = "\(item.price)"
 			amountTextField.text = "\(item.amount)"
+		}
+		else {
+			edit = false
 		}
 
 		updateSaveButton()
