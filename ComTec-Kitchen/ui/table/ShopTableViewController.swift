@@ -21,7 +21,6 @@ class ShopTableViewController: DictTableViewController<Item> {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 
-		tableView.allowsSelectionDuringEditing = true
 		if Session.shared.isAdmin() {
 			navigationItem.leftBarButtonItem = editButtonItem
 		}
