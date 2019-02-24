@@ -61,6 +61,10 @@ class EditItemTableViewController: UITableViewController {
 			edit = false
 		}
 
+		if #available(iOS 11.0, *) {
+			navigationItem.largeTitleDisplayMode = .never
+		}
+
 		updateSaveButton()
 	}
 

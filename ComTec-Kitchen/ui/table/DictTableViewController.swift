@@ -28,6 +28,11 @@ class DictTableViewController<T> : UITableViewController {
 		// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
 		// self.navigationItem.rightBarButtonItem = self.editButtonItem
 
+		if #available(iOS 11.0, *) {
+			navigationItem.largeTitleDisplayMode = .always
+			navigationController?.navigationBar.prefersLargeTitles = true
+		}
+
 		self.refreshControl = UIRefreshControl()
 		self.refreshControl?.addTarget(self, action: #selector(handleRefresh(_:)), for: .primaryActionTriggered)
 	}
