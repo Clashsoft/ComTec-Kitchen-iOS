@@ -45,11 +45,22 @@ class ShopTableViewController: DictTableViewController<Item> {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueItemCell(for: indexPath)
 		let item = getItem(at: indexPath)
+		let cartAmount = Cart.shared.getAmount(of: item)
 
 		cell.nameLabel.text = item.name
 		cell.descriptionLabel.text = "\(item.amount) available"
-		cell.topRightLabel.text = item.price.€
-		cell.bottomRightLabel.text = ""
+
+		switch cartAmount {
+			case 0:
+				cell.topRightLabel.text = item.price.€
+				cell.bottomRightLabel.text = ""
+			case 1:
+				cell.topRightLabel.text = "1 × \(item.price.€)"
+				cell.bottomRightLabel.text = ""
+			default:
+				cell.topRightLabel.text = "\(cartAmount) × \(item.price.€)"
+				cell.bottomRightLabel.text = (Double(cartAmount) * item.price).€
+		}
 
 		return cell
 	}
