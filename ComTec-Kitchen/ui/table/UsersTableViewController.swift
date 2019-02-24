@@ -74,4 +74,25 @@ class UsersTableViewController: DictTableViewController<User>, UISearchResultsUp
 
 		return cell
 	}
+
+	// --------------- Navigation ---------------
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		super.prepare(for: segue, sender: sender)
+
+		if segue.identifier == "EditUser",
+		   let target = segue.destination as? EditUserTableViewController,
+		   let selectedRow = tableView.indexPathForSelectedRow {
+			target.user = getItem(at: selectedRow)
+		}
+	}
+
+	override func unwindTo(_ segue: UIStoryboardSegue) {
+		if segue.identifier == "SaveUnwind" {
+			sections = getSections()
+			if let indexPath = tableView.indexPathForSelectedRow {
+				tableView.reloadRows(at: [indexPath], with: .automatic)
+			}
+		}
+	}
 }
