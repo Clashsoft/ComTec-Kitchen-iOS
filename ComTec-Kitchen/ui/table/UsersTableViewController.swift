@@ -17,6 +17,16 @@ class UsersTableViewController: DictTableViewController<User> {
 		return Users.shared.getSectioned()
 	}
 
+	// --------------- Index ---------------
+
+	override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+		return sections.map {
+			$0.header
+		}
+	}
+
+	// --------------- Cell Rendering ---------------
+
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
 		let user = getItem(at: indexPath)
