@@ -19,6 +19,11 @@ class CartTableViewController: DictTableViewController<Purchase> {
 		barItem?.selectedImage = empty ? UIImage.cartFilled : UIImage.cartBuyingFilled
 	}
 
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		tableView.installItemCell()
+	}
+
 	override func refresh(completion: @escaping () -> Void) {
 		// Cart.shared.refreshAll(completion: completion)
 		CartTableViewController.refreshBadge(self.tabBarController)
@@ -73,12 +78,15 @@ class CartTableViewController: DictTableViewController<Purchase> {
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath)
+		let cell = tableView.dequeueItemCell(for: indexPath)
 		let purchase = getItem(at: indexPath)
-		let itemName = Items.shared.get(id: purchase.item_id)?.name ?? purchase.item_id
+		let item = Items.shared.get(id: purchase.item_id)
+		let itemName = item?.name ?? purchase.item_id
 
-		cell.textLabel?.text = "\(itemName)"
-		cell.detailTextLabel?.text = "\(purchase.created ?? "") | \(purchase.amount) * \(purchase.itemPrice.€) = \(purchase.total.€)"
+		cell.nameLabel.text = itemName
+		cell.descriptionLabel.text = "\(item?.amount ?? 0) available"
+		cell.topRightLabel.text = "\(purchase.amount) × \(purchase.itemPrice.€)"
+		cell.bottomRightLabel.text = purchase.total.€
 
 		return cell
 	}

@@ -9,6 +9,11 @@
 import UIKit
 
 class ShopTableViewController: DictTableViewController<Item> {
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		tableView.installItemCell()
+	}
+
 	override func refresh(completion: @escaping () -> Void) {
 		Items.shared.refreshAll(completion: completion)
 	}
@@ -18,11 +23,13 @@ class ShopTableViewController: DictTableViewController<Item> {
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "shopCell", for: indexPath)
+		let cell = tableView.dequeueItemCell(for: indexPath)
 		let item = getItem(at: indexPath)
 
-		cell.textLabel?.text = item.name
-		cell.detailTextLabel?.text = "\(item.amount) available for \(item.price.€)"
+		cell.nameLabel.text = item.name
+		cell.descriptionLabel.text = "\(item.amount) available"
+		cell.topRightLabel.text = item.price.€
+		cell.bottomRightLabel.text = ""
 
 		return cell
 	}
