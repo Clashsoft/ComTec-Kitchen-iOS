@@ -41,9 +41,9 @@ class Cart {
 	}
 
 	func getAmount(of item: Item) -> Int {
-		return purchases.filter {
-			$0.item_id == item._id
-		}.count
+		return purchases.reduce(0) {
+			$0 + ($1.item_id == item._id ? $1.amount : 0)
+		}
 	}
 
 	// --------------- Modification ---------------
