@@ -20,6 +20,8 @@ class UsersTableViewController: DictTableViewController<User>, UISearchResultsUp
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		tableView.installItemCell()
+
 		// Setup the Search Controller
 		searchController.searchResultsUpdater = self
 		searchController.obscuresBackgroundDuringPresentation = false
@@ -66,13 +68,27 @@ class UsersTableViewController: DictTableViewController<User>, UISearchResultsUp
 	// --------------- Cell Rendering ---------------
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
+		let cell = tableView.dequeueItemCell(for: indexPath)
 		let user = getItem(at: indexPath)
 
-		cell.textLabel?.text = "\(user.name) (\(user.role))"
-		cell.detailTextLabel?.text = "\(user.mail) | \(user.created ?? "") | \(user.credit)"
+		if user._id == Session.shared.getLoggedInUser()?._id {
+			cell.nameLabel.attributedText = user.name + " me".colored(.gray)
+		}
+		else {
+			cell.nameLabel.text = user.name
+		}
+
+		cell.descriptionLabel.text = user.mail
+		cell.topRightLabel.text = user.credit.€
+		cell.bottomRightLabel.text = user.role
+
+		cell.bottomRightLabel.textColor = user.role == "admin" ? .red : .black
 
 		return cell
+	}
+
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		performSegue(withIdentifier: "EditUser", sender: self)
 	}
 
 	// --------------- Navigation ---------------

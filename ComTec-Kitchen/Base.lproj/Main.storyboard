@@ -321,7 +321,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userCell" textLabel="xNK-w7-1PJ" detailTextLabel="BJm-kD-Plw" style="IBUITableViewCellStyleSubtitle" id="JHw-PK-yti">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" textLabel="xNK-w7-1PJ" detailTextLabel="BJm-kD-Plw" style="IBUITableViewCellStyleSubtitle" id="JHw-PK-yti">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JHw-PK-yti" id="GqC-Kr-2HZ">
@@ -344,9 +344,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="wbh-bI-8Ac" kind="show" identifier="EditUser" id="Vj9-et-7fD"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -355,6 +352,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Users" id="kOt-vJ-dCq"/>
+                    <connections>
+                        <segue destination="wbh-bI-8Ac" kind="show" identifier="EditUser" id="Ych-SH-Hjc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAe-GI-s95" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
