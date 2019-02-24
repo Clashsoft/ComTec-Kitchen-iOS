@@ -178,7 +178,7 @@
         <scene sceneID="blX-Al-CxD">
             <objects>
                 <navigationController id="Ule-cm-e1N" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="oTF-HH-aOn"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings-filled" id="oTF-HH-aOn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BS9-Ui-zju">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -195,7 +195,7 @@
         <scene sceneID="IBs-7l-YxT">
             <objects>
                 <navigationController id="3ED-Dw-uFS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Users" id="muU-3T-5NJ"/>
+                    <tabBarItem key="tabBarItem" title="Users" image="users" selectedImage="users-filled" id="muU-3T-5NJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pUA-tY-Hrx">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -269,7 +269,7 @@
         <scene sceneID="gGN-fF-9LG">
             <objects>
                 <navigationController id="HwD-dc-Ptn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cart" id="YwO-tf-5am"/>
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart-filled" selectedImage="cart-filled" id="YwO-tf-5am"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gyr-hk-xwe">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -285,8 +285,9 @@
         <!--Purchase History-->
         <scene sceneID="jeK-EF-1Ao">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LQH-YW-Z0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="Xut-pb-6nb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Purchase History" id="u6p-KJ-lQh"/>
+                    <tabBarItem key="tabBarItem" title="Purchase History" image="history" selectedImage="history-filled" id="u6p-KJ-lQh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g8J-Js-EFa">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -295,7 +296,6 @@
                         <segue destination="lYC-lJ-PeM" kind="relationship" relationship="rootViewController" id="Xbf-PH-SRp"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LQH-YW-Z0o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1988" y="-336"/>
         </scene>
@@ -303,7 +303,7 @@
         <scene sceneID="7lx-uP-fdu">
             <objects>
                 <navigationController id="ocD-38-iMJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shop" id="6dh-Tq-2KG"/>
+                    <tabBarItem key="tabBarItem" title="Shop" image="fridge" selectedImage="fridge-filled" id="6dh-Tq-2KG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vVN-kI-qp7">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -430,6 +430,17 @@
             <point key="canvasLocation" x="1988" y="-1165"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cart-filled" width="37.5" height="37.5"/>
+        <image name="fridge" width="37.5" height="37.5"/>
+        <image name="fridge-filled" width="37.5" height="37.5"/>
+        <image name="history" width="37.5" height="37.5"/>
+        <image name="history-filled" width="37.5" height="37.5"/>
+        <image name="settings" width="37.5" height="37.5"/>
+        <image name="settings-filled" width="37.5" height="37.5"/>
+        <image name="users" width="37.5" height="37.5"/>
+        <image name="users-filled" width="37.5" height="37.5"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="0Td-Wf-5fH"/>
     </inferredMetricsTieBreakers>
