@@ -28,8 +28,18 @@ class Users {
 		return Array(users.values)
 	}
 
-	func getGrouped() -> [String:[User]] {
-		return Dictionary(grouping: users.values) { "\($0.name.first ?? " ")" }
+	func getSectioned() -> [Section<User>] {
+		let grouped: [String: [User]] = Dictionary(grouping: users.values) { (user: User) in
+			String(user.name.first ?? "#").uppercased()
+		}
+		let sorted: [(String, [User])] = grouped.sorted {
+			$0.key < $1.key
+		}
+		return sorted.map {
+			(header: $0.0, items: $0.1.sorted {
+				$0.name < $1.name
+			})
+		}
 	}
 
 	// --------------- Modification ---------------

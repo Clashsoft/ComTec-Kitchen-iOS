@@ -18,8 +18,8 @@ class PurchasesTableViewController: DictTableViewController<Purchase> {
 		Purchases.shared.refreshMine(completion: completion)
 	}
 
-	override func getDict() -> [String: [Purchase]] {
-		return Purchases.shared.getMineGrouped()
+	override func getSections() -> [Section<Purchase>] {
+		return Purchases.shared.getMineSectioned()
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

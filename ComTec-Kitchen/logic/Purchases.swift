@@ -32,12 +32,21 @@ class Purchases {
 		return Array(purchases.values.filter { $0.user_id == userId })
 	}
 
-	func getMineGrouped() -> [String:[Purchase]] {
-		return Dictionary(grouping: getMine()) { (purchase: Purchase) in
-			guard let created = purchase.created else {
+	func getMineSectioned() -> [Section<Purchase>] {
+		let grouped: [String: [Purchase]] = Dictionary(grouping: getMine()) { (purchase: Purchase) in
+			guard let created = purchase.created
+			else {
 				return ""
 			}
 			return String(created[..<created.index(created.startIndex, offsetBy: 10)])
+		}
+		let sorted: [(String, [Purchase])] = grouped.sorted {
+			$0.key < $1.key
+		}
+		return sorted.map {
+			(header: $0.0, items: $0.1.sorted {
+				$0.created < $1.created
+			})
 		}
 	}
 

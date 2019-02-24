@@ -30,8 +30,18 @@ class Items {
 		return Array(items.values)
 	}
 
-	func getGrouped() -> [String:[Item]] {
-		return Dictionary(grouping: items.values) { $0.kind }
+	func getSectioned() -> [Section<Item>] {
+		let grouped: [String: [Item]] = Dictionary(grouping: items.values) {
+			$0.kind
+		}
+		let sorted: [(String, [Item])] = grouped.sorted {
+			$0.key < $1.key
+		}
+		return sorted.map {
+			(header: $0.0, items: $0.1.sorted {
+				$0.name < $1.name
+			})
+		}
 	}
 
 	// --------------- Modification ---------------

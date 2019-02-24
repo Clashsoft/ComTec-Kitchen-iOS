@@ -36,8 +36,8 @@ class ShopTableViewController: DictTableViewController<Item> {
 		Items.shared.refreshAll(completion: completion)
 	}
 
-	override func getDict() -> [String: [Item]] {
-		return Items.shared.getGrouped()
+	override func getSections() -> [Section<Item>] {
+		return Items.shared.getSectioned()
 	}
 
 	// --------------- Cell Rendering ---------------
@@ -134,7 +134,7 @@ class ShopTableViewController: DictTableViewController<Item> {
 		else if tableView.isEditing {
 			Items.shared.delete(item: item) {
 				DispatchQueue.main.async {
-					self.dict = self.getDict()
+					self.sections = self.getSections()
 					tableView.deleteRows(at: [indexPath], with: .automatic)
 				}
 			}
@@ -155,7 +155,7 @@ class ShopTableViewController: DictTableViewController<Item> {
 
 	@IBAction override func unwindTo(_ segue: UIStoryboardSegue) {
 		if segue.identifier == "SaveUnwind" {
-			dict = getDict()
+			sections = getSections()
 			if let indexPath = tableView.indexPathForSelectedRow {
 				tableView.reloadRows(at: [indexPath], with: .automatic)
 			}

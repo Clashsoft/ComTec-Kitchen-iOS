@@ -6,12 +6,13 @@
 import Foundation
 import UIKit
 
+typealias Section<T> =  (header: String, items: [T])
+
 class DictTableViewController<T> : UITableViewController {
-	var dict: [String:[T]] = [:]
+	var sections: [Section<T>] = []
 
 	private func dictSection(at section: Int) -> (header: String, items: [T]) {
-		let (key, value) = dict[dict.index(dict.startIndex, offsetBy: section)]
-		return (header: key, items: value)
+		return sections[section]
 	}
 
 	func getItem(at indexPath: IndexPath) -> T {
@@ -43,7 +44,7 @@ class DictTableViewController<T> : UITableViewController {
 		UIApplication.shared.isNetworkActivityIndicatorVisible = true
 		refresh {
 			DispatchQueue.main.async {
-				self.dict = self.getDict()
+				self.sections = self.getSections()
 				self.tableView.reloadData()
 				self.tableView.refreshControl?.endRefreshing()
 				UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -51,7 +52,7 @@ class DictTableViewController<T> : UITableViewController {
 		}
 	}
 
-	func getDict() -> [String:[T]] {
+	func getSections() -> [Section<T>] {
 		fatalError("not implemented")
 	}
 
@@ -60,7 +61,7 @@ class DictTableViewController<T> : UITableViewController {
 	}
 
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return dict.count
+		return sections.count
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

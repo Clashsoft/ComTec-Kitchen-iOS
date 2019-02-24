@@ -13,8 +13,8 @@ class UsersTableViewController: DictTableViewController<User> {
 		Users.shared.refreshAll(completion: completion)
 	}
 
-	override func getDict() -> [String: [User]] {
-		return Users.shared.getGrouped()
+	override func getSections() -> [Section<User>] {
+		return Users.shared.getSectioned()
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
