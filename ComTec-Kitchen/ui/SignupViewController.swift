@@ -9,14 +9,14 @@
 import UIKit
 
 class SignupViewController: UIViewController {
+	// =============== Fields ===============
+
 	@IBOutlet weak var nameTextField: UITextField!
 	@IBOutlet weak var mailTextField: UITextField!
 	@IBOutlet weak var submitButton: UIButton!
 	@IBOutlet weak var adminSwitch: UISwitch!
 
-	override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+	// =============== Methods ===============
 
 	@IBAction func editingChanged(_ sender: UITextField) {
 		let nameEntered = !(nameTextField.text ?? "").isEmpty
@@ -24,14 +24,14 @@ class SignupViewController: UIViewController {
 		submitButton.isEnabled = nameEntered && mailEntered
 	}
 
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "SignupSubmit" {
-			let name = nameTextField.text!
-			let mail = mailTextField.text!
-			let admin = adminSwitch.isOn
-			Session.shared.register(name: name, mail: mail, admin: admin)
+	@IBAction func submitButtonTapped(_ sender: UIButton) {
+		let name = nameTextField.text!
+		let mail = mailTextField.text!
+		let admin = adminSwitch.isOn
+		Session.shared.register(name: name, mail: mail, admin: admin) {
+			DispatchQueue.main.async {
+				self.performSegue(withIdentifier: "SubmitSignup", sender: sender)
+			}
 		}
-    }
+	}
 }

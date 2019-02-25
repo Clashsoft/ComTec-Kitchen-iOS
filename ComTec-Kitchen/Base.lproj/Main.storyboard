@@ -1003,7 +1003,7 @@
                                         <rect key="frame" x="147" y="237.5" width="49" height="30"/>
                                         <state key="normal" title="Submit"/>
                                         <connections>
-                                            <segue destination="49e-Tb-3d3" kind="showDetail" identifier="SignupSubmit" id="0Td-Wf-5fH"/>
+                                            <action selector="submitButtonTapped:" destination="UPF-MI-71G" eventType="touchUpInside" id="JHn-T3-5sv"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1028,6 +1028,7 @@
                         <outlet property="mailTextField" destination="tq3-8c-TB4" id="eMo-Yq-nHD"/>
                         <outlet property="nameTextField" destination="TrY-0a-Rgt" id="r05-lC-2E1"/>
                         <outlet property="submitButton" destination="7ZJ-Dc-b9y" id="FKP-sx-vxw"/>
+                        <segue destination="49e-Tb-3d3" kind="showDetail" identifier="SubmitSignup" id="ZDo-zH-Qts"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="265-1p-oSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1089,7 +1090,7 @@
         <image name="users-filled" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ol3-o8-aBf"/>
+        <segue reference="ZDo-zH-Qts"/>
         <segue reference="moi-O4-rZR"/>
         <segue reference="aUc-eH-MmJ"/>
     </inferredMetricsTieBreakers>
