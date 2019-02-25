@@ -10,60 +10,94 @@ class Session {
 
 	static let shared = Session()
 
-	static let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-	static let archiveURL = documentsDirectory.appendingPathComponent("ComTec-Kitchen").appendingPathExtension("plist")
-
 	// =============== Fields ===============
 
 	private let api = KitchenAPI.shared
-	private var userId: String?
+
+	private var preferences: Preferences!
+
+	// =============== Properties ===============
+
+	var userId: String? {
+		return preferences?.currentAccount?.userId
+	}
 
 	// =============== Methods ===============
+
+	// --------------- Access ---------------
+
+	func getNumberOfAccounts() -> Int {
+		return preferences?.accounts.count ?? 0
+	}
+
+	func getAccount(index: Int) -> Account {
+		return preferences.accounts[index]
+	}
 
 	// --------------- Login and Signup ---------------
 
 	func tryLogin() -> Bool {
-		if !loadUserInfo() {
-			return false
+		if let preferences = Preferences.load() {
+			self.preferences = preferences
+			selectAccount(withIndex: preferences.currentAccountIndex)
+			return true
 		}
 
-		guard let userId = userId else {
-			return false
-		}
-
-		api.getUser(id: userId) { (data, error) in
-			if let json = data, let user = JSONTranslator.json2user(json: json) {
-				Users.shared.updateLocal(user: user)
-			}
-		}
-		return true
+		self.preferences = Preferences()
+		return false
 	}
 
-	func register(name: String, mail: String, admin: Bool) {
+	func register(name: String, mail: String, admin: Bool, completion: (() -> Void)? = nil) {
 		let role = admin ? "admin" : "user"
 		let user = User(_id: nil, name: name, mail: mail, role: role, created: nil, token: nil, credit: 0)
-		guard let userJson = JSONTranslator.user2json(user: user) else {
+
+		guard let userJson = JSONTranslator.user2json(user: user)
+		else {
 			return
 		}
 
-		(admin ? api.createAdminUser : api.createRegularUser)(userJson) { (data: Data?, error: Error?) in
+		(admin ? api.createAdminUser : api.createRegularUser)(userJson) { (data, error) in
 			if let json = data, let resultUser = JSONTranslator.json2user(json: json) {
-				self.setUserInfo(userId: resultUser._id, userToken: resultUser.token)
-				self.saveUserInfo()
+				let account = Account(userId: resultUser._id, userToken: resultUser.token, userName: resultUser.name)
+
+				self.preferences.accounts.append(account)
+				self.preferences.currentAccountIndex = self.preferences.accounts.endIndex
+				self.preferences.save()
+
 				Users.shared.updateLocal(user: resultUser)
 			}
+			completion?()
 		}
 	}
 
-	func clearUserData() {
-		setUserInfo(userId: nil, userToken: nil)
-		saveUserInfo()
+	func selectAccount(withIndex index: Int, completion: (() -> Void)? = nil) {
+		preferences.currentAccountIndex = index
+
+		guard let currentAccount = preferences.currentAccount
+		else {
+			return
+		}
+
+		KitchenAPI.shared.userToken = currentAccount.userToken
+
+		api.getUser(id: currentAccount.userId) { (data, error) in
+			if let json = data, let user = JSONTranslator.json2user(json: json) {
+				currentAccount.userName = user.name
+
+				Users.shared.updateLocal(user: user)
+			}
+
+			// always save because index set above (maybe also name)
+			self.preferences.save()
+			completion?()
+		}
 	}
 
 	// --------------- Logged-In User ---------------
 
 	func getLoggedInUser() -> User? {
-		guard let userId = userId else {
+		guard let userId = userId
+		else {
 			return nil
 		}
 		return Users.shared.get(id: userId)
@@ -80,52 +114,5 @@ class Session {
 			return loggedInUser.role == "admin"
 		}
 		return false
-	}
-
-	// --------------- Helpers ---------------
-
-	private func setUserInfo(userId: String?, userToken: String?) {
-		self.userId = userId
-		api.userToken = userToken
-	}
-
-	private func loadUserInfo() -> Bool {
-		guard let data = try? Data(contentsOf: Session.archiveURL)
-		else {
-			return false
-		}
-
-		let decoder = PropertyListDecoder()
-		guard let properties = try? decoder.decode([String: String].self, from: data),
-		      let userId = properties["userId"],
-		      let userToken = properties["userToken"]
-		else {
-			return false
-		}
-
-		setUserInfo(userId: userId, userToken: userToken)
-		return true
-	}
-
-	private func saveUserInfo() {
-		let properties: [String:String]
-
-		if let userId = self.userId, let userToken = api.userToken {
-			properties = ["userId": userId, "userToken": userToken]
-		}
-		else {
-			properties = [:]
-		}
-
-		let encoder = PropertyListEncoder()
-		guard let data = try? encoder.encode(properties) else {
-			return
-		}
-
-		do {
-			try data.write(to: Session.archiveURL)
-		}
-		catch {
-		}
 	}
 }

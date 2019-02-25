@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d8A-pc-KVx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q2H-Ro-6if">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -466,7 +466,13 @@
                             <outlet property="delegate" destination="lYC-lJ-PeM" id="v6q-nS-1Vx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Account" id="kQa-ph-1HD"/>
+                    <navigationItem key="navigationItem" title="Account" id="kQa-ph-1HD">
+                        <barButtonItem key="leftBarButtonItem" title="Switch" id="OmS-lQ-O6N">
+                            <connections>
+                                <segue destination="rgc-IJ-5m8" kind="show" id="DQL-rS-1ih"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="amountLabel" destination="NwY-Fi-d2Q" id="R7l-9w-oEK"/>
                         <outlet property="createdLabel" destination="0S9-i2-Skr" id="3J0-hd-D6Z"/>
@@ -871,24 +877,71 @@
             </objects>
             <point key="canvasLocation" x="558" y="-337"/>
         </scene>
-        <!--Launch View Controller-->
-        <scene sceneID="yry-vF-LKq">
+        <!--Select Account-->
+        <scene sceneID="0mH-d5-GDk">
             <objects>
-                <viewController id="d8A-pc-KVx" customClass="LaunchViewController" customModule="ComTec_Kitchen" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Otu-gE-AxB">
+                <tableViewController title="Select Account" id="rgc-IJ-5m8" customClass="AccountsTableViewController" customModule="ComTec_Kitchen" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="6q3-re-4fY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Egc-Jz-sn0"/>
-                    </view>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="4pd-Wx-Aw7">
+                            <rect key="frame" x="0.0" y="117.5" width="375" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVO-eL-lXl">
+                                    <rect key="frame" x="116.5" y="17" width="142" height="33"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="Create an Account"/>
+                                    <connections>
+                                        <segue destination="UPF-MI-71G" kind="show" identifier="CreateAccount" id="moi-O4-rZR"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9n-kA-oVV">
+                                    <rect key="frame" x="179.5" y="-4" width="16" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="yVO-eL-lXl" secondAttribute="bottom" id="Eb5-gw-nnV"/>
+                                <constraint firstItem="yVO-eL-lXl" firstAttribute="centerX" secondItem="4pd-Wx-Aw7" secondAttribute="centerX" id="aih-yk-W1y"/>
+                                <constraint firstItem="o9n-kA-oVV" firstAttribute="centerX" secondItem="4pd-Wx-Aw7" secondAttribute="centerX" id="nKw-ka-WCH"/>
+                                <constraint firstItem="yVO-eL-lXl" firstAttribute="top" secondItem="o9n-kA-oVV" secondAttribute="bottom" id="ngl-lT-2gk"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="UserCell" textLabel="d7C-J6-1lu" style="IBUITableViewCellStyleDefault" id="6WS-P8-eJ0">
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6WS-P8-eJ0" id="N87-9O-vzK">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d7C-J6-1lu">
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rgc-IJ-5m8" id="nKu-0k-aqm"/>
+                            <outlet property="delegate" destination="rgc-IJ-5m8" id="vEf-VJ-hYF"/>
+                        </connections>
+                    </tableView>
                     <connections>
-                        <segue destination="49e-Tb-3d3" kind="showDetail" identifier="AutoLogin" id="kHD-QL-EgV"/>
-                        <segue destination="UPF-MI-71G" kind="show" identifier="ShowSignup" id="H5X-1M-85X"/>
+                        <segue destination="49e-Tb-3d3" kind="showDetail" identifier="SelectAccount" id="Ol3-o8-aBf"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WZA-YZ-mck" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rEj-jj-22c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="-1165"/>
+            <point key="canvasLocation" x="1273" y="1119"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="BL0-9X-eOd">
@@ -979,7 +1032,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="265-1p-oSO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1273" y="-1655"/>
+            <point key="canvasLocation" x="1988" y="-1906"/>
+        </scene>
+        <!--Launch View Controller-->
+        <scene sceneID="em7-00-BJ2">
+            <objects>
+                <viewController id="q2H-Ro-6if" customClass="LaunchViewController" customModule="ComTec_Kitchen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="n2Z-dK-V5c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="wdN-QD-Tu3"/>
+                    </view>
+                    <connections>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="AutoLogin" animates="NO" id="EJB-sW-lq8"/>
+                        <segue destination="UPF-MI-71G" kind="show" identifier="ShowSignup" animates="NO" id="rtQ-Kq-LKG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aOE-fh-iY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1273" y="-1907"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1017,7 +1089,8 @@
         <image name="users-filled" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kHD-QL-EgV"/>
+        <segue reference="Ol3-o8-aBf"/>
+        <segue reference="moi-O4-rZR"/>
         <segue reference="aUc-eH-MmJ"/>
     </inferredMetricsTieBreakers>
 </document>
