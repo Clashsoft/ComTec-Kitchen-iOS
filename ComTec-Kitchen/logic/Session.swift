@@ -69,9 +69,9 @@ class Session {
 		return Users.shared.get(id: userId)
 	}
 
-	func refreshLoggedInUser() {
+	func refreshLoggedInUser(completion: (() -> Void)? = nil) {
 		if let loggedInUser = getLoggedInUser() {
-			Users.shared.refresh(user: loggedInUser)
+			Users.shared.refresh(user: loggedInUser, completion: completion)
 		}
 	}
 
