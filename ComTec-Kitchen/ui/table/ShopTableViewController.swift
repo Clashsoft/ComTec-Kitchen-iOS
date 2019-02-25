@@ -36,7 +36,7 @@ class ShopTableViewController: DictTableViewController<Item> {
 	}
 
 	override func getSections() -> [Section<Item>] {
-		return Items.shared.getSectioned()
+		return Items.shared.getAll().sectioned()
 	}
 
 	// --------------- Cell Rendering ---------------

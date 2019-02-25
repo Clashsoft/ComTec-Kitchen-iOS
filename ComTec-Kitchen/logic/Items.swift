@@ -30,20 +30,6 @@ class Items {
 		return Array(items.values)
 	}
 
-	func getSectioned() -> [Section<Item>] {
-		let grouped: [String: [Item]] = Dictionary(grouping: items.values) {
-			$0.kind
-		}
-		let sorted: [(String, [Item])] = grouped.sorted {
-			$0.key < $1.key
-		}
-		return sorted.map {
-			(header: $0.0, items: $0.1.sorted {
-				$0.name < $1.name
-			})
-		}
-	}
-
 	// --------------- Modification ---------------
 
 	func updateLocal(item: Item) {
@@ -94,6 +80,22 @@ class Items {
 		api.deleteItem(id: item._id) { (_, _) in
 			self.deleteLocal(item: item)
 			completion?()
+		}
+	}
+}
+
+extension Sequence where Element == Item {
+	func sectioned() -> [Section<Item>] {
+		let grouped: [String: [Item]] = Dictionary(grouping: self) {
+			$0.kind
+		}
+		let sorted: [(String, [Item])] = grouped.sorted {
+			$0.key < $1.key
+		}
+		return sorted.map {
+			(header: $0.0, items: $0.1.sorted {
+				$0.name < $1.name
+			})
 		}
 	}
 }

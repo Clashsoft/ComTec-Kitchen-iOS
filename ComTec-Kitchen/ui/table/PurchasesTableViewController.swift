@@ -19,7 +19,7 @@ class PurchasesTableViewController: DictTableViewController<Purchase> {
 	}
 
 	override func getSections() -> [Section<Purchase>] {
-		return Purchases.shared.getMineSectioned()
+		return Purchases.shared.getMine().sectioned()
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
