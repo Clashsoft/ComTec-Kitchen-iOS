@@ -33,36 +33,21 @@ class DictTableViewController<T> : UITableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		// Uncomment the following line to preserve selection between presentations
-		// self.clearsSelectionOnViewWillAppear = false
-
-		// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-		// self.navigationItem.rightBarButtonItem = self.editButtonItem
-
-		if #available(iOS 11.0, *) {
-			navigationItem.largeTitleDisplayMode = .always
-			navigationController?.navigationBar.prefersLargeTitles = true
-		}
-
-		self.refreshControl = UIRefreshControl()
-		self.refreshControl?.addTarget(self, action: #selector(handleRefresh(_:)), for: .primaryActionTriggered)
+		useLargeTitles()
+		useRefresh()
 	}
 
 	override func viewDidAppear(_ animated: Bool) {
-		self.refresh()
-	}
-
-	@objc func handleRefresh(_ refreshControl: UIRefreshControl) {
 		refresh()
 	}
 
-	func refresh() {
-		UIApplication.shared.isNetworkActivityIndicatorVisible = true
+	override func refresh() {
+		showNetworkIndicator()
 		refresh {
 			DispatchQueue.main.async {
 				self.reload()
-				self.tableView.refreshControl?.endRefreshing()
-				UIApplication.shared.isNetworkActivityIndicatorVisible = false
+				self.endRefreshing()
+				hideNetworkIndicator()
 			}
 		}
 	}
