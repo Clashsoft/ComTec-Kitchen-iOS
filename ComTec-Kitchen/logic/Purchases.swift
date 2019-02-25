@@ -44,8 +44,8 @@ class Purchases {
 		api.getAllPurchases { (data, error) in
 			if let json = data, let purchases = JSONTranslator.json2purchases(json: json) {
 				purchases.forEach(self.updateLocal)
-				completion?()
 			}
+			completion?()
 		}
 	}
 
@@ -53,8 +53,8 @@ class Purchases {
 		api.getMyPurchases { (data, error) in
 			if let json = data, let purchases = JSONTranslator.json2purchases(json: json) {
 				purchases.forEach(self.updateLocal)
-				completion?()
 			}
+			completion?()
 		}
 	}
 }

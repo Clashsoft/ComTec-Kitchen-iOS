@@ -47,8 +47,8 @@ class Items {
 			if let json = data, let items = JSONTranslator.json2items(json: json) {
 				self.items.removeAll()
 				items.forEach(self.updateLocal)
-				completion?()
 			}
+			completion?()
 		}
 	}
 
@@ -59,8 +59,8 @@ class Items {
 		api.createItem(json: itemJson) { (data, error) in
 			if let json = data, let item = JSONTranslator.json2item(json: json) {
 				self.updateLocal(item: item)
-				completion?()
 			}
+			completion?()
 		}
 	}
 
@@ -71,8 +71,8 @@ class Items {
 		api.updateItem(id: item._id, json: json) { (data, error) in
 			if let json = data, let item = JSONTranslator.json2item(json: json) {
 				self.updateLocal(item: item)
-				completion?()
 			}
+			completion?()
 		}
 	}
 

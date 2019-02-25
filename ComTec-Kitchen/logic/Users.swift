@@ -45,8 +45,8 @@ class Users {
 			if let json = data, let users = JSONTranslator.json2users(json: json) {
 				self.users.removeAll()
 				users.forEach(self.updateLocal)
-				completion?()
 			}
+			completion?()
 		}
 	}
 
@@ -54,8 +54,8 @@ class Users {
 		api.getUser(id: user._id) { (data, error) in
 			if let json = data, let user = JSONTranslator.json2user(json: json) {
 				self.updateLocal(user: user)
-				completion?()
 			}
+			completion?()
 		}
 	}
 
