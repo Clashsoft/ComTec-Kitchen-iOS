@@ -14,6 +14,7 @@
 		1B0A1485F08653ED38822D5B /* Items.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A19B4BE572B25D59E5583 /* Items.swift */; };
 		1B0A15026BACF135BFF0FFD2 /* HttpConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A16A45CE71B5C7A22742C /* HttpConnection.swift */; };
 		1B0A153FFA0D2F2271CC44EB /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A114EE5EE18B31CAAE880 /* Users.swift */; };
+		1B0A1624A299606C2BF3A0D9 /* AccountTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A116843C81FC44B2803F8 /* AccountTableViewController.swift */; };
 		1B0A165793AA3A9B4146DE74 /* Purchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A17224E1EC7329291EE38 /* Purchases.swift */; };
 		1B0A166C5F9F6781068D9490 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A13FE310EB13EDEEB40AC /* User.swift */; };
 		1B0A1688B29679514E91DB54 /* EditItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1B72EE7227CFE9A8D928 /* EditItemTableViewController.swift */; };
@@ -25,6 +26,7 @@
 		1B0A1C10F7045E6ACAF9911C /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B0A1968BA214EDC5022BB91 /* ItemCell.xib */; };
 		1B0A1C45155DFA3FD46872E0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A19DC72237BCE441F393A /* Item.swift */; };
 		1B0A1C894F7D07A663BCBDE1 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1C19E5BD6E5FB1FDF45D /* Session.swift */; };
+		1B0A1CF477D3F69876DC3C02 /* TableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1AA560D56C9571C323D2 /* TableViews.swift */; };
 		1B0A1D4E25C7D72D28050A64 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1409DA481FCF94620146 /* LaunchViewController.swift */; };
 		1B0A1DD6172D19491BA105D6 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1885DC87C59EB35F4B05 /* UsersTableViewController.swift */; };
 		1B0A1EC2AC329F4EF30A36D1 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1F7FBF39059639FC29E2 /* CartTableViewController.swift */; };
@@ -39,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		1B0A114EE5EE18B31CAAE880 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = logic/Users.swift; sourceTree = "<group>"; };
+		1B0A116843C81FC44B2803F8 /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountTableViewController.swift; path = ui/table/AccountTableViewController.swift; sourceTree = "<group>"; };
 		1B0A13FE310EB13EDEEB40AC /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = model/User.swift; sourceTree = "<group>"; };
 		1B0A1409DA481FCF94620146 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = ui/LaunchViewController.swift; sourceTree = "<group>"; };
 		1B0A144A870C4649BC5A6B1E /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = ui/table/cell/ItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -51,6 +54,7 @@
 		1B0A1968BA214EDC5022BB91 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ItemCell.xib; path = ui/table/cell/ItemCell.xib; sourceTree = "<group>"; };
 		1B0A19B4BE572B25D59E5583 /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Items.swift; path = logic/Items.swift; sourceTree = "<group>"; };
 		1B0A19DC72237BCE441F393A /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = model/Item.swift; sourceTree = "<group>"; };
+		1B0A1AA560D56C9571C323D2 /* TableViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViews.swift; path = ext/TableViews.swift; sourceTree = "<group>"; };
 		1B0A1B72EE7227CFE9A8D928 /* EditItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditItemTableViewController.swift; path = ui/edit/EditItemTableViewController.swift; sourceTree = "<group>"; };
 		1B0A1C19E5BD6E5FB1FDF45D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = logic/Session.swift; sourceTree = "<group>"; };
 		1B0A1D90220FB0471AE84EB5 /* PurchasesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PurchasesTableViewController.swift; path = ui/table/PurchasesTableViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 				1B0A144A870C4649BC5A6B1E /* ItemTableViewCell.swift */,
 				3603B1F2222333C700BDE97D /* EditUserTableViewController.swift */,
 				1B0A1E4701E26FC1AF129BD2 /* AttributedStrings.swift */,
+				1B0A116843C81FC44B2803F8 /* AccountTableViewController.swift */,
+				1B0A1AA560D56C9571C323D2 /* TableViews.swift */,
 			);
 			path = "ComTec-Kitchen";
 			sourceTree = "<group>";
@@ -229,6 +235,8 @@
 				1B0A1BFC3915B5BC7DE88905 /* PurchasesTableViewController.swift in Sources */,
 				1B0A1F2CC26649D83A8207F2 /* ItemTableViewCell.swift in Sources */,
 				1B0A1A7939195BE6DAD0BE87 /* AttributedStrings.swift in Sources */,
+				1B0A1624A299606C2BF3A0D9 /* AccountTableViewController.swift in Sources */,
+				1B0A1CF477D3F69876DC3C02 /* TableViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
