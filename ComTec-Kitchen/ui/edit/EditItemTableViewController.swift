@@ -28,6 +28,7 @@ class EditItemTableViewController: UITableViewController {
 		set {
 			title = newValue ? "Edit Item" : "Add Item"
 			idTextField.isEnabled = !newValue
+			idTextField.textColor = newValue ? .gray : .darkText
 		}
 	}
 
@@ -81,7 +82,10 @@ class EditItemTableViewController: UITableViewController {
 	}
 
 	@IBAction func saveButtonTapped(_ sender: Any) {
-		guard let item = readItem() else { return }
+		guard let item = readItem()
+		else {
+			return
+		}
 		(edit ? Items.shared.update : Items.shared.create)(item) {
 			DispatchQueue.main.async {
 				self.performSegue(withIdentifier: "SaveUnwind", sender: self)
@@ -92,10 +96,17 @@ class EditItemTableViewController: UITableViewController {
 	// --------------- Table View ---------------
 
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return 5
+		return 2
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
+		switch section {
+			case 0:
+				return 3
+			case 1:
+				return 2
+			default:
+				return 0
+		}
 	}
 }
