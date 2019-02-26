@@ -1157,6 +1157,13 @@
                     <view key="view" contentMode="scaleToFill" id="n2Z-dK-V5c">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="1z7-Wq-PMp">
+                                <rect key="frame" x="170" y="316" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="wdN-QD-Tu3"/>
                     </view>
@@ -1202,9 +1209,8 @@
         <image name="users-filled" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DQL-rS-1ih"/>
-        <segue reference="Ol3-o8-aBf"/>
-        <segue reference="moi-O4-rZR"/>
+        <segue reference="EJB-sW-lq8"/>
+        <segue reference="rtQ-Kq-LKG"/>
         <segue reference="oR0-b3-wMz"/>
     </inferredMetricsTieBreakers>
 </document>

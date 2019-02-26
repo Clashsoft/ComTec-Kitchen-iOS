@@ -36,10 +36,10 @@ class Session {
 
 	// --------------- Login and Signup ---------------
 
-	func tryLogin() -> Bool {
+	func tryLogin(completion: (() -> Void)? = nil) -> Bool {
 		if let preferences = Preferences.load() {
 			self.preferences = preferences
-			selectAccount(withIndex: preferences.currentAccountIndex)
+			selectAccount(withIndex: preferences.currentAccountIndex, completion: completion)
 			return true
 		}
 
