@@ -34,7 +34,6 @@
 		1B0A1DD6172D19491BA105D6 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1885DC87C59EB35F4B05 /* UsersTableViewController.swift */; };
 		1B0A1EC2AC329F4EF30A36D1 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1F7FBF39059639FC29E2 /* CartTableViewController.swift */; };
 		1B0A1F2CC26649D83A8207F2 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A144A870C4649BC5A6B1E /* ItemTableViewCell.swift */; };
-		1B0A1F86442D73EC3AA0EC2C /* AccountsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A110BDEFFF9A6DCBEBB96 /* AccountsTableViewController.swift */; };
 		3603B1F3222333C700BDE97D /* EditUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3603B1F2222333C700BDE97D /* EditUserTableViewController.swift */; };
 		360B523C2221ECF600B842A0 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360B523B2221ECF600B842A0 /* SignupViewController.swift */; };
 		363115242221A87B005DC2B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363115232221A87B005DC2B5 /* AppDelegate.swift */; };
@@ -250,7 +249,6 @@
 				1B0A1CF477D3F69876DC3C02 /* TableViews.swift in Sources */,
 				1B0A11FE96F0BF2E1D328CB8 /* LaunchViewController.swift in Sources */,
 				1B0A151344CA62F4D8BFFE26 /* AccountsTableViewController.swift in Sources */,
-				1B0A1F86442D73EC3AA0EC2C /* AccountsTableViewController.swift in Sources */,
 				1B0A12E33C87EDE99D018F0E /* Preferences.swift in Sources */,
 				1B0A17002538C7751F15AFDD /* Account.swift in Sources */,
 			);
