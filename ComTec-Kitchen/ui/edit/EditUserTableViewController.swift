@@ -12,8 +12,12 @@ class EditUserTableViewController: UITableViewController {
 	// =============== Fields ===============
 
 	@IBOutlet weak var saveButton: UIBarButtonItem!
+
 	@IBOutlet weak var nameTextField: UITextField!
 	@IBOutlet weak var mailTextField: UITextField!
+	@IBOutlet weak var idTextField: UITextField!
+	@IBOutlet weak var createdTextField: UITextField!
+
 	@IBOutlet weak var creditTextField: UITextField!
 
 	var user: User!
@@ -41,6 +45,9 @@ class EditUserTableViewController: UITableViewController {
 		if let user = user {
 			nameTextField.text = user.name
 			mailTextField.text = user.mail
+			idTextField.text = user._id
+			createdTextField.text = user.created
+
 			creditTextField.text = "\(user.credit)"
 		}
 
@@ -78,10 +85,17 @@ class EditUserTableViewController: UITableViewController {
 	// --------------- Table View ---------------
 
 	override func numberOfSections(in tableView: UITableView) -> Int {
-		return 3
+		return 2
 	}
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
+		switch section {
+		case 0:
+			return 4
+		case 1:
+			return 1
+		default:
+			return 0
+		}
 	}
 }
