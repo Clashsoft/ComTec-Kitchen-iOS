@@ -9,6 +9,10 @@
 import UIKit
 
 class ShopTableViewController: DictTableViewController<Item> {
+	// =============== Fields ===============
+
+	@IBOutlet var addButtonItem: UIBarButtonItem!
+
 	// =============== Methods ===============
 
 	// --------------- View Load ---------------
@@ -22,9 +26,11 @@ class ShopTableViewController: DictTableViewController<Item> {
 		super.viewDidAppear(animated)
 
 		if Session.shared.isAdmin() {
-			navigationItem.leftBarButtonItem = editButtonItem
+			navigationItem.leftBarButtonItem = addButtonItem
+			navigationItem.rightBarButtonItem = editButtonItem
 		}
 		else {
+			navigationItem.leftBarButtonItem = nil
 			navigationItem.rightBarButtonItem = nil
 		}
 	}
