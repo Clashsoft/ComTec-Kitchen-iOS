@@ -22,6 +22,8 @@ class UsersTableViewController: DictTableViewController<User>, UISearchResultsUp
 
 		tableView.installItemCell()
 
+		navigationItem.rightBarButtonItem = editButtonItem
+
 		// Setup the Search Controller
 		searchController.searchResultsUpdater = self
 		searchController.obscuresBackgroundDuringPresentation = false
