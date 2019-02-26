@@ -927,7 +927,6 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Cart" id="YXj-Ml-j7j">
                         <barButtonItem key="leftBarButtonItem" systemItem="trash" id="T8Q-ta-X7v">
-                            <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="clearClicked:" destination="n9C-40-LFQ" id="ul5-JO-RH5"/>
                             </connections>
@@ -1207,7 +1206,7 @@
         <image name="users-filled" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZDo-zH-Qts"/>
+        <segue reference="Ol3-o8-aBf"/>
         <segue reference="moi-O4-rZR"/>
         <segue reference="aUc-eH-MmJ"/>
     </inferredMetricsTieBreakers>
