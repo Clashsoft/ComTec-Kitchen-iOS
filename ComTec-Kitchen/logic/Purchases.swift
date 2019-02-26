@@ -60,6 +60,18 @@ class Purchases {
 }
 
 extension Sequence where Element == Purchase {
+	var totalAmount: Int {
+		return self.reduce(0) {
+			$0 + $1.amount
+		}
+	}
+
+	var totalPrice: Double {
+		return self.reduce(0) {
+			$0 + $1.total
+		}
+	}
+
 	func sectioned() -> [Section<Purchase>] {
 		let grouped: [String: [Purchase]] = Dictionary(grouping: self) { (purchase: Purchase) in
 			guard let created = purchase.created

@@ -48,21 +48,16 @@ class AccountTableViewController: RefreshableTableViewController {
 			return
 		}
 
+		let myPurchases = Purchases.shared.getMine()
+
+		self.amountLabel.text = "\(myPurchases.totalAmount)"
 		self.creditLabel.text = user.credit.€
+		self.totalLabel.text = myPurchases.totalPrice.€
+
 		self.nameLabel.text = user.name
 		self.mailLabel.text = user.mail
 		self.idLabel.text = user._id
 		self.createdLabel.text = user.created
-
-		let amount = Purchases.shared.getMine().reduce(0) {
-			$0 + $1.amount
-		}
-		let total = Purchases.shared.getMine().reduce(0) {
-			$0 + $1.total
-		}
-
-		self.amountLabel.text = "\(amount)"
-		self.totalLabel.text = total.€
 	}
 
 	// --------------- Table View ---------------

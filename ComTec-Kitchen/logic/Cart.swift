@@ -29,15 +29,11 @@ class Cart {
 	}
 
 	func getTotal() -> Double {
-		return purchases.reduce(0) {
-			$0 + $1.total
-		}
+		return purchases.totalPrice
 	}
 
 	func getTotalAmount() -> Int {
-		return purchases.reduce(0) {
-			$0 + $1.amount
-		}
+		return purchases.totalAmount
 	}
 
 	func getAmount(of item: Item) -> Int {
