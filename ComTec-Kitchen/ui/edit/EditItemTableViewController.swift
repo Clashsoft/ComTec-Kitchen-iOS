@@ -21,16 +21,9 @@ class EditItemTableViewController: UITableViewController {
 
 	var item: Item?
 
-	var edit: Bool {
-		get {
-			return !idTextField.isEnabled
-		}
-		set {
-			title = newValue ? "Edit Item" : "Add Item"
-			idTextField.isEnabled = !newValue
-			idTextField.textColor = newValue ? .gray : .darkText
-		}
-	}
+	var barcode: String?
+
+	private var edit: Bool = false
 
 	func readItem() -> Item? {
 		if let id = idTextField.text,
@@ -47,23 +40,44 @@ class EditItemTableViewController: UITableViewController {
 
 	// =============== Methods ===============
 
-	// --------------- View Load ---------------
+	// --------------- View Phases ---------------
 
 	override func viewDidLoad() {
+		super.viewDidLoad()
+
+		if #available(iOS 11.0, *) {
+			navigationItem.largeTitleDisplayMode = .never
+		}
+	}
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+
 		if let item = item {
 			edit = true
+			title = "Edit Item"
+			idTextField.isEnabled = false
+			idTextField.textColor = .lightGray
+
 			idTextField.text = item._id
 			nameTextField.text = item.name
 			kindTextField.text = item.kind
 			priceTextField.text = "\(item.price)"
 			amountTextField.text = "\(item.amount)"
 		}
+		else if let barcode = barcode {
+			edit = false
+			title = "Add Item"
+			idTextField.isEnabled = false
+			idTextField.textColor = .lightGray
+
+			idTextField.text = barcode
+		}
 		else {
 			edit = false
-		}
-
-		if #available(iOS 11.0, *) {
-			navigationItem.largeTitleDisplayMode = .never
+			title = "Add Item"
+			idTextField.isEnabled = true
+			idTextField.textColor = .black
 		}
 
 		updateSaveButton()
