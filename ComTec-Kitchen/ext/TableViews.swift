@@ -21,21 +21,4 @@ extension UITableViewController {
 			navigationController?.navigationBar.prefersLargeTitles = true
 		}
 	}
-
-	func useRefresh() {
-		self.refreshControl = UIRefreshControl()
-		self.refreshControl?.addTarget(self, action: #selector(handleRefresh(_:)), for: .primaryActionTriggered)
-	}
-
-	@objc func handleRefresh(_ control: UIRefreshControl) {
-		self.refresh()
-	}
-
-	@objc func refresh() {
-		fatalError("not implemented")
-	}
-
-	func endRefreshing() {
-		self.tableView.refreshControl?.endRefreshing()
-	}
 }

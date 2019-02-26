@@ -8,7 +8,7 @@ import UIKit
 
 typealias Section<T> = (header: String, items: [T])
 
-class DictTableViewController<T>: UITableViewController {
+class DictTableViewController<T>: RefreshableTableViewController {
 	// =============== Fields ===============
 
 	var sections: [Section<T>] = []
@@ -42,13 +42,6 @@ class DictTableViewController<T>: UITableViewController {
 		super.viewDidLoad()
 
 		useLargeTitles()
-		useRefresh()
-	}
-
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-
-		refresh()
 	}
 
 	// --------------- Reload ---------------
@@ -57,7 +50,7 @@ class DictTableViewController<T>: UITableViewController {
 		fatalError("not implemented")
 	}
 
-	func reload() {
+	override func reload() {
 		sections = getSections()
 		tableView.reloadData()
 	}
@@ -72,23 +65,6 @@ class DictTableViewController<T>: UITableViewController {
 			sections = getSections()
 			tableView.deleteRows(at: [indexPath], with: .automatic)
 		}
-	}
-
-	// --------------- Refresh ---------------
-
-	override func refresh() {
-		showNetworkIndicator()
-		refresh {
-			DispatchQueue.main.async {
-				self.reload()
-				self.endRefreshing()
-				hideNetworkIndicator()
-			}
-		}
-	}
-
-	func refresh(completion: @escaping () -> Void) {
-		fatalError("not implemented")
 	}
 
 	// --------------- Table View ---------------
