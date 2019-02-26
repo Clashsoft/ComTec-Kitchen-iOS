@@ -1124,10 +1124,10 @@
             </objects>
             <point key="canvasLocation" x="1273" y="-1907"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="MainTabBarController" customModule="ComTec_Kitchen" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1157,6 +1157,7 @@
         <image name="users-filled" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="FwM-jL-SlY"/>
         <segue reference="Ol3-o8-aBf"/>
         <segue reference="moi-O4-rZR"/>
         <segue reference="aUc-eH-MmJ"/>

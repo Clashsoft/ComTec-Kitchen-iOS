@@ -24,6 +24,7 @@
 		1B0A17002538C7751F15AFDD /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A17F445E6E7E10E519097 /* Account.swift */; };
 		1B0A1743CFF34233D8C97AEE /* DictTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1E3A7D30E3E6EF979D1B /* DictTableViewController.swift */; };
 		1B0A19576661788880A7887D /* ShopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A15080F1D73B778F3EC9A /* ShopTableViewController.swift */; };
+		1B0A19B117CBDAC43291282B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A161061CE7F9F88F45151 /* MainTabBarController.swift */; };
 		1B0A1A7939195BE6DAD0BE87 /* AttributedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1E4701E26FC1AF129BD2 /* AttributedStrings.swift */; };
 		1B0A1AF29BC1FBF858ACF087 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1887773C9AA47A552ADE /* Purchase.swift */; };
 		1B0A1BFC3915B5BC7DE88905 /* PurchasesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1D90220FB0471AE84EB5 /* PurchasesTableViewController.swift */; };
@@ -50,6 +51,7 @@
 		1B0A144A870C4649BC5A6B1E /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = ui/table/cell/ItemTableViewCell.swift; sourceTree = "<group>"; };
 		1B0A15080F1D73B778F3EC9A /* ShopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopTableViewController.swift; path = ui/table/ShopTableViewController.swift; sourceTree = "<group>"; };
 		1B0A15C0DE7649CCED4C49C8 /* Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Images.swift; path = ui/Images.swift; sourceTree = "<group>"; };
+		1B0A161061CE7F9F88F45151 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = ui/MainTabBarController.swift; sourceTree = "<group>"; };
 		1B0A16A45CE71B5C7A22742C /* HttpConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HttpConnection.swift; path = server/HttpConnection.swift; sourceTree = "<group>"; };
 		1B0A17224E1EC7329291EE38 /* Purchases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Purchases.swift; path = logic/Purchases.swift; sourceTree = "<group>"; };
 		1B0A17F445E6E7E10E519097 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = model/Account.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				1B0A110BDEFFF9A6DCBEBB96 /* AccountsTableViewController.swift */,
 				1B0A1CA69796800681855964 /* Preferences.swift */,
 				1B0A17F445E6E7E10E519097 /* Account.swift */,
+				1B0A161061CE7F9F88F45151 /* MainTabBarController.swift */,
 			);
 			path = "ComTec-Kitchen";
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				1B0A151344CA62F4D8BFFE26 /* AccountsTableViewController.swift in Sources */,
 				1B0A12E33C87EDE99D018F0E /* Preferences.swift in Sources */,
 				1B0A17002538C7751F15AFDD /* Account.swift in Sources */,
+				1B0A19B117CBDAC43291282B /* MainTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
