@@ -6,10 +6,16 @@
 import Foundation
 import UIKit
 
-typealias Section<T> =  (header: String, items: [T])
+typealias Section<T> = (header: String, items: [T])
 
-class DictTableViewController<T> : UITableViewController {
+class DictTableViewController<T>: UITableViewController {
+	// =============== Fields ===============
+
 	var sections: [Section<T>] = []
+
+	// =============== Methods ===============
+
+	// --------------- Section Access ---------------
 
 	private func dictSection(at section: Int) -> (header: String, items: [T]) {
 		return sections[section]
@@ -30,6 +36,8 @@ class DictTableViewController<T> : UITableViewController {
 		return nil
 	}
 
+	// --------------- View Phases ---------------
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -38,18 +46,15 @@ class DictTableViewController<T> : UITableViewController {
 	}
 
 	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+
 		refresh()
 	}
 
-	override func refresh() {
-		showNetworkIndicator()
-		refresh {
-			DispatchQueue.main.async {
-				self.reload()
-				self.endRefreshing()
-				hideNetworkIndicator()
-			}
-		}
+	// --------------- Reload ---------------
+
+	func getSections() -> [Section<T>] {
+		fatalError("not implemented")
 	}
 
 	func reload() {
@@ -69,13 +74,24 @@ class DictTableViewController<T> : UITableViewController {
 		}
 	}
 
-	func getSections() -> [Section<T>] {
-		fatalError("not implemented")
+	// --------------- Refresh ---------------
+
+	override func refresh() {
+		showNetworkIndicator()
+		refresh {
+			DispatchQueue.main.async {
+				self.reload()
+				self.endRefreshing()
+				hideNetworkIndicator()
+			}
+		}
 	}
 
 	func refresh(completion: @escaping () -> Void) {
 		fatalError("not implemented")
 	}
+
+	// --------------- Table View ---------------
 
 	override func numberOfSections(in tableView: UITableView) -> Int {
 		return sections.count
@@ -88,6 +104,8 @@ class DictTableViewController<T> : UITableViewController {
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 		return dictSection(at: section).header
 	}
+
+	// --------------- Navigation ---------------
 
 	@IBAction func unwindTo(_ unwindSegue: UIStoryboardSegue) {
 	}
