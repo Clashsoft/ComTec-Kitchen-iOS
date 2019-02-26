@@ -6,7 +6,7 @@
 import Foundation
 import UIKit
 
-class AccountTableViewController: UITableViewController {
+class AccountTableViewController: RefreshableTableViewController {
 	// =============== Fields ===============
 
 	@IBOutlet weak var amountLabel: UILabel!
@@ -26,7 +26,6 @@ class AccountTableViewController: UITableViewController {
 		super.viewDidLoad()
 
 		useLargeTitles()
-		useRefresh()
 
 		for label in [amountLabel, creditLabel, totalLabel,
 		              nameLabel, mailLabel, idLabel, createdLabel] {
@@ -34,46 +33,36 @@ class AccountTableViewController: UITableViewController {
 		}
 	}
 
-	override func viewDidAppear(_ animated: Bool) {
-		refresh()
-	}
-
 	// --------------- Refresh ---------------
 
-	override func refresh() {
-		showNetworkIndicator()
+	override func refresh(completion: @escaping () -> Void) {
+		// duplicate call to completion is deliberate
+		Session.shared.refreshLoggedInUser(completion: completion)
+		Purchases.shared.refreshMine(completion: completion)
+	}
 
-		Session.shared.refreshLoggedInUser {
-			DispatchQueue.main.async {
-				guard let user = Session.shared.getLoggedInUser()
-				else {
-					return
-				}
-
-				self.creditLabel.text = user.credit.€
-				self.nameLabel.text = user.name
-				self.mailLabel.text = user.mail
-				self.idLabel.text = user._id
-				self.createdLabel.text = user.created
-			}
+	override func reload() {
+		guard let user = Session.shared.getLoggedInUser()
+		else {
+			// cancels Purchase info collection too, but ok since that wouldn't work without the User anyway
+			return
 		}
 
-		Purchases.shared.refreshMine {
-			DispatchQueue.main.async {
-				let amount = Purchases.shared.getAll().reduce(0) {
-					$0 + $1.amount
-				}
-				let total = Purchases.shared.getAll().reduce(0) {
-					$0 + $1.total
-				}
+		self.creditLabel.text = user.credit.€
+		self.nameLabel.text = user.name
+		self.mailLabel.text = user.mail
+		self.idLabel.text = user._id
+		self.createdLabel.text = user.created
 
-				self.amountLabel.text = "\(amount)"
-				self.totalLabel.text = total.€
-
-				self.endRefreshing()
-				hideNetworkIndicator()
-			}
+		let amount = Purchases.shared.getMine().reduce(0) {
+			$0 + $1.amount
 		}
+		let total = Purchases.shared.getMine().reduce(0) {
+			$0 + $1.total
+		}
+
+		self.amountLabel.text = "\(amount)"
+		self.totalLabel.text = total.€
 	}
 
 	// --------------- Table View ---------------
