@@ -28,11 +28,17 @@ class ShopTableViewController: DictTableViewController<Item> {
 
 		if Session.shared.isAdmin() {
 			navigationItem.leftBarButtonItem = addButtonItem
-			navigationItem.rightBarButtonItem = editButtonItem
+
+			if navigationItem.rightBarButtonItems?.count != 2 {
+				navigationItem.rightBarButtonItems?.append(editButtonItem)
+			}
 		}
 		else {
 			navigationItem.leftBarButtonItem = nil
-			navigationItem.rightBarButtonItem = nil
+
+			if navigationItem.rightBarButtonItems?.count == 2 {
+				navigationItem.rightBarButtonItems?.removeLast()
+			}
 		}
 	}
 

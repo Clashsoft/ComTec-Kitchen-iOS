@@ -286,6 +286,11 @@
                                 <segue destination="8ja-Vx-B2z" kind="presentation" id="l3e-SR-yqn"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="1nb-SM-VyX">
+                            <connections>
+                                <segue destination="YVH-Ty-yCe" kind="show" id="jI7-2p-dKH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addButtonItem" destination="jYJ-cI-4Uy" id="dOx-5o-Ul7"/>
@@ -947,6 +952,36 @@
             </objects>
             <point key="canvasLocation" x="558" y="-337"/>
         </scene>
+        <!--Scan View Controller-->
+        <scene sceneID="rr5-0p-OOn">
+            <objects>
+                <viewController id="YVH-Ty-yCe" customClass="ScanViewController" customModule="ComTec_Kitchen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rbH-69-g5r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ii-X7-NUt">
+                                <rect key="frame" x="147.5" y="578" width="80" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="2Ii-X7-NUt" firstAttribute="bottom" secondItem="0Ug-pN-zUM" secondAttribute="bottom" constant="-16" id="FYv-fH-wgD"/>
+                            <constraint firstItem="2Ii-X7-NUt" firstAttribute="centerX" secondItem="rbH-69-g5r" secondAttribute="centerX" id="RO9-Ft-EVw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Ug-pN-zUM"/>
+                    </view>
+                    <connections>
+                        <outlet property="infoLabel" destination="2Ii-X7-NUt" id="P8M-FX-dhJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K9r-o1-45L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="558" y="1119"/>
+        </scene>
         <!--Select Account-->
         <scene sceneID="0mH-d5-GDk">
             <objects>
@@ -1157,7 +1192,6 @@
         <image name="users-filled" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DQL-rS-1ih"/>
         <segue reference="Ol3-o8-aBf"/>
         <segue reference="moi-O4-rZR"/>
         <segue reference="aUc-eH-MmJ"/>
