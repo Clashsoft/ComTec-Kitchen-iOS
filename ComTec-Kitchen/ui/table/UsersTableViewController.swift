@@ -128,10 +128,7 @@ class UsersTableViewController: DictTableViewController<User>, UISearchResultsUp
 
 	override func unwindTo(_ segue: UIStoryboardSegue) {
 		if segue.identifier == "SaveUnwind" {
-			sections = getSections()
-			if let indexPath = tableView.indexPathForSelectedRow {
-				tableView.reloadRows(at: [indexPath], with: .automatic)
-			}
+			reload()
 		}
 	}
 }
