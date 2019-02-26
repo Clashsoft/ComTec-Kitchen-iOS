@@ -239,7 +239,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xQ-Xs-3qO" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="IL7-vU-0nd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-191" y="1121"/>
+            <point key="canvasLocation" x="-191" y="1119"/>
         </scene>
         <!--Shop-->
         <scene sceneID="Nfq-Cu-bVS">
@@ -968,17 +968,27 @@
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                         </subviews>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="2Ii-X7-NUt" firstAttribute="bottom" secondItem="0Ug-pN-zUM" secondAttribute="bottom" constant="-16" id="FYv-fH-wgD"/>
                             <constraint firstItem="2Ii-X7-NUt" firstAttribute="centerX" secondItem="rbH-69-g5r" secondAttribute="centerX" id="RO9-Ft-EVw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0Ug-pN-zUM"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="W0Q-Tq-1uH" appends="YES" id="bzb-E9-F8G"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="infoLabel" destination="2Ii-X7-NUt" id="P8M-FX-dhJ"/>
+                        <segue destination="xl1-Jw-nCQ" kind="show" identifier="AddScannedItem" id="oR0-b3-wMz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9r-o1-45L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="W0Q-Tq-1uH">
+                    <connections>
+                        <action selector="viewTapped:" destination="YVH-Ty-yCe" id="Xwu-es-lVB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="558" y="1119"/>
         </scene>
@@ -1192,8 +1202,9 @@
         <image name="users-filled" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="DQL-rS-1ih"/>
         <segue reference="Ol3-o8-aBf"/>
         <segue reference="moi-O4-rZR"/>
-        <segue reference="aUc-eH-MmJ"/>
+        <segue reference="oR0-b3-wMz"/>
     </inferredMetricsTieBreakers>
 </document>

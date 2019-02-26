@@ -16,6 +16,8 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
 	var videoPreviewLayer: AVCaptureVideoPreviewLayer!
 	var qrCodeFrameView: UIView!
 
+	var lastBarcode: String?
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -94,15 +96,60 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
 			return
 		}
 
-		guard let metadataObject = metadataObjects[0] as? AVMetadataMachineReadableCodeObject
+		guard let metadataObject = metadataObjects[0] as? AVMetadataMachineReadableCodeObject,
+		      let barcode = metadataObject.stringValue
 		else {
 			return
 		}
 
-		infoLabel.text = metadataObject.stringValue
+		lastBarcode = barcode
+		infoLabel.text = barcode
 
 		if let frameObject = videoPreviewLayer.transformedMetadataObject(for: metadataObject) {
 			qrCodeFrameView.frame = frameObject.bounds
+		}
+	}
+
+	@IBAction func viewTapped(_ sender: Any) {
+		guard let barcode = lastBarcode
+		else {
+			return
+		}
+
+		if let item = Items.shared.get(id: barcode) {
+			let title = "Add '\(item.name)' to Cart"
+			let message = "What amount do you want to add?"
+			let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+			alert.addTextField() { field in
+				field.placeholder = "1"
+				field.keyboardType = .numberPad
+			}
+
+			alert.addAction(UIAlertAction(title: "OK", style: .default) { action in
+				if let textField = alert.textFields?[0] {
+					let amount = Int(textField.text ?? "") ?? 1
+
+					Cart.shared.add(item: item, amount: amount)
+					CartTableViewController.refreshBadge(self.tabBarController)
+				}
+			})
+			alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+
+			self.present(alert, animated: true)
+		}
+		else if Session.shared.isAdmin() {
+			performSegue(withIdentifier: "AddScannedItem", sender: self)
+		}
+	}
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		super.prepare(for: segue, sender: sender)
+
+		if segue.identifier == "AddScannedItem",
+		   let barcode = lastBarcode,
+		   let target = segue.destination as? EditItemTableViewController {
+			target.barcode = barcode
 		}
 	}
 }
