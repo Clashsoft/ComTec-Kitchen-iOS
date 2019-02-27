@@ -281,20 +281,25 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Shop" id="3Kg-om-0Qe">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="jYJ-cI-4Uy">
-                            <connections>
-                                <segue destination="8ja-Vx-B2z" kind="presentation" id="l3e-SR-yqn"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="1nb-SM-VyX">
-                            <connections>
-                                <segue destination="YVH-Ty-yCe" kind="show" id="jI7-2p-dKH"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem systemItem="add" id="Kb6-1Q-uXt">
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="VTJ-7n-PXh" id="jpj-Rr-3jm"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="camera" id="aQw-Iq-55i">
+                                <connections>
+                                    <action selector="camButtonTapped:" destination="VTJ-7n-PXh" id="Bkc-Yx-1Go"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="addButtonItem" destination="jYJ-cI-4Uy" id="dOx-5o-Ul7"/>
+                        <outlet property="addButtonItem" destination="Kb6-1Q-uXt" id="HZw-nf-HGf"/>
+                        <outlet property="cameraButtonItem" destination="aQw-Iq-55i" id="OeK-Fn-OxR"/>
                         <segue destination="xl1-Jw-nCQ" kind="show" identifier="EditItem" id="aUc-eH-MmJ"/>
+                        <segue destination="8ja-Vx-B2z" kind="showDetail" identifier="AddItem" id="Ud9-JH-R0U"/>
+                        <segue destination="YVH-Ty-yCe" kind="show" identifier="ScanItem" id="yme-TA-COA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sXg-UD-V6q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1211,6 +1216,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="EJB-sW-lq8"/>
         <segue reference="rtQ-Kq-LKG"/>
-        <segue reference="oR0-b3-wMz"/>
+        <segue reference="aUc-eH-MmJ"/>
     </inferredMetricsTieBreakers>
 </document>

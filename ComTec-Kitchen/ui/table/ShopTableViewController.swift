@@ -12,6 +12,7 @@ class ShopTableViewController: DictTableViewController<Item> {
 	// =============== Fields ===============
 
 	@IBOutlet var addButtonItem: UIBarButtonItem!
+	@IBOutlet var cameraButtonItem: UIBarButtonItem!
 
 	// =============== Methods ===============
 
@@ -21,25 +22,32 @@ class ShopTableViewController: DictTableViewController<Item> {
 		super.viewDidLoad()
 
 		tableView.installItemCell()
+
+		// In the storyboard, both buttons are present,
+		// so we remove the add button here under the assumption
+		// that edit mode is initially off
+		navigationItem.leftBarButtonItems = [cameraButtonItem]
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 
-		if Session.shared.isAdmin() {
-			navigationItem.leftBarButtonItem = addButtonItem
+		navigationItem.rightBarButtonItem = Session.shared.isAdmin() ? editButtonItem : nil
+	}
 
-			if navigationItem.rightBarButtonItems?.count != 2 {
-				navigationItem.rightBarButtonItems?.append(editButtonItem)
-			}
-		}
-		else {
-			navigationItem.leftBarButtonItem = nil
+	override func setEditing(_ editing: Bool, animated: Bool) {
+		super.setEditing(editing, animated: animated)
+		navigationItem.leftBarButtonItem = editing ? addButtonItem : cameraButtonItem
+	}
 
-			if navigationItem.rightBarButtonItems?.count == 2 {
-				navigationItem.rightBarButtonItems?.removeLast()
-			}
-		}
+	// --------------- Left Bar Button Actions ---------------
+
+	@IBAction func addButtonTapped(_ button: UIBarButtonItem) {
+		self.performSegue(withIdentifier: "AddItem", sender: self)
+	}
+
+	@IBAction func camButtonTapped(_ button: UIBarButtonItem) {
+		self.performSegue(withIdentifier: "ScanItem", sender: self)
 	}
 
 	// --------------- Refresh ---------------
