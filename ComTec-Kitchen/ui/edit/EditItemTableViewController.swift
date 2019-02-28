@@ -30,7 +30,8 @@ class EditItemTableViewController: UITableViewController {
 		   let name = nameTextField.text,
 		   let kind = kindTextField.text,
 		   let price = Double(priceTextField.text ?? ""),
-		   let amount = Int(amountTextField.text ?? "") {
+		   let amount = Int(amountTextField.text ?? ""),
+		   price <= Item.maxPrice {
 			return Item(_id: id, name: name, price: price, amount: amount, kind: kind)
 		}
 		else {

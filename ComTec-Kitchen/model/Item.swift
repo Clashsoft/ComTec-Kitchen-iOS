@@ -6,6 +6,8 @@
 import Foundation
 
 struct Item: Codable {
+	static let maxPrice: Double = 1000.00
+
 	var _id: String!
 	var name: String
 	var price: Double
