@@ -9,6 +9,8 @@
 import UIKit
 
 class CartTableViewController: DictTableViewController<Purchase> {
+	// =============== Static Methods ===============
+
 	static func refreshBadge(_ tabBarController: UITabBarController?) {
 		let empty = Cart.shared.isEmpty()
 		let badgeValue = empty ? nil : "\(Cart.shared.getTotalAmount())"
@@ -19,20 +21,16 @@ class CartTableViewController: DictTableViewController<Purchase> {
 		barItem?.selectedImage = empty ? UIImage.cartFilled : UIImage.cartBuyingFilled
 	}
 
+	// =============== Methods ===============
+
+	// --------------- View Phases ---------------
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tableView.installItemCell()
 	}
 
-	override func refresh(completion: @escaping () -> Void) {
-		// Cart.shared.refreshAll(completion: completion)
-		CartTableViewController.refreshBadge(self.tabBarController)
-		completion()
-	}
-
-	override func getSections() -> [Section<Purchase>] {
-		return Cart.shared.isEmpty() ? [] : [("", Cart.shared.purchases)]
-	}
+	// --------------- Buttons ---------------
 
 	@IBAction func submitClicked(_ sender: Any) {
 		let totalAmount = Cart.shared.getTotalAmount()
@@ -77,6 +75,23 @@ class CartTableViewController: DictTableViewController<Purchase> {
 		self.present(dialog, animated: true, completion: nil)
 	}
 
+	// --------------- Refresh ---------------
+
+	override func reload() {
+		super.reload()
+		CartTableViewController.refreshBadge(self.tabBarController)
+	}
+
+	override func refresh(completion: @escaping () -> Void) {
+		Cart.shared.refreshAll(completion: completion)
+	}
+
+	override func getSections() -> [Section<Purchase>] {
+		return Cart.shared.isEmpty() ? [] : [("", Cart.shared.purchases)]
+	}
+
+	// --------------- Cell Rendering ---------------
+
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueItemCell(for: indexPath)
 		let purchase = getItem(at: indexPath)
@@ -90,6 +105,8 @@ class CartTableViewController: DictTableViewController<Purchase> {
 
 		return cell
 	}
+
+	// --------------- Cell Deletion ---------------
 
 	override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 		return true
