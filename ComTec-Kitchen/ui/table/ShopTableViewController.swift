@@ -178,9 +178,3 @@ class ShopTableViewController: DictTableViewController<Item> {
 		}
 	}
 }
-
-extension Double {
-	var €: String {
-		return String(format: "%.2f €", self)
-	}
-}

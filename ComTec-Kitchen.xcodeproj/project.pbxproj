@@ -10,6 +10,7 @@
 		1B0A106766B73A9C58FB5BC2 /* KitchenAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1EF8EE5545B9D4B94297 /* KitchenAPI.swift */; };
 		1B0A10CCF1E389004A8D9997 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A15C0DE7649CCED4C49C8 /* Images.swift */; };
 		1B0A11FE96F0BF2E1D328CB8 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1A023CD7173ECB11C43D /* LaunchViewController.swift */; };
+		1B0A120E2BE777FD2FC18CDC /* CurrencyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A19F473A8E4DB1E98A253 /* CurrencyFormat.swift */; };
 		1B0A12E33C87EDE99D018F0E /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1CA69796800681855964 /* Preferences.swift */; };
 		1B0A13C916D919E7E845CA5E /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1DE9802FA34DC3BE4602 /* Cart.swift */; };
 		1B0A141424DCEB49839FE56D /* JSONTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1E8A6DB06EE099DD4DFC /* JSONTranslator.swift */; };
@@ -64,6 +65,7 @@
 		1B0A1968BA214EDC5022BB91 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ItemCell.xib; path = ui/table/cell/ItemCell.xib; sourceTree = "<group>"; };
 		1B0A19B4BE572B25D59E5583 /* Items.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Items.swift; path = logic/Items.swift; sourceTree = "<group>"; };
 		1B0A19DC72237BCE441F393A /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Item.swift; path = model/Item.swift; sourceTree = "<group>"; };
+		1B0A19F473A8E4DB1E98A253 /* CurrencyFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CurrencyFormat.swift; path = ext/CurrencyFormat.swift; sourceTree = "<group>"; };
 		1B0A1A023CD7173ECB11C43D /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = ui/LaunchViewController.swift; sourceTree = "<group>"; };
 		1B0A1AA560D56C9571C323D2 /* TableViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViews.swift; path = ext/TableViews.swift; sourceTree = "<group>"; };
 		1B0A1B72EE7227CFE9A8D928 /* EditItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditItemTableViewController.swift; path = ui/edit/EditItemTableViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				1B0A161061CE7F9F88F45151 /* MainTabBarController.swift */,
 				1B0A143FB711193661CFE664 /* RefreshableTableViewController.swift */,
 				1B0A1D63E627C115B008D6A0 /* ScanViewController.swift */,
+				1B0A19F473A8E4DB1E98A253 /* CurrencyFormat.swift */,
 			);
 			path = "ComTec-Kitchen";
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				1B0A19B117CBDAC43291282B /* MainTabBarController.swift in Sources */,
 				1B0A15B233780479851CFA65 /* RefreshableTableViewController.swift in Sources */,
 				1B0A175FD2B4ACA4F27B2C2F /* ScanViewController.swift in Sources */,
+				1B0A120E2BE777FD2FC18CDC /* CurrencyFormat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

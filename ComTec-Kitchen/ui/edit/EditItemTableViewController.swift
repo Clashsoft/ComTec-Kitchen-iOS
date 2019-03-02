@@ -29,7 +29,7 @@ class EditItemTableViewController: UITableViewController {
 		if let id = idTextField.text,
 		   let name = nameTextField.text,
 		   let kind = kindTextField.text,
-		   let price = Double(priceTextField.text ?? ""),
+		   let price = NumberFormatter.localDecimal.number(from: priceTextField.text ?? "") as? Double,
 		   let amount = Int(amountTextField.text ?? ""),
 		   price <= Item.maxPrice {
 			return Item(_id: id, name: name, price: price, amount: amount, kind: kind)
@@ -63,7 +63,7 @@ class EditItemTableViewController: UITableViewController {
 			idTextField.text = item._id
 			nameTextField.text = item.name
 			kindTextField.text = item.kind
-			priceTextField.text = "\(item.price)"
+			priceTextField.text = NumberFormatter.localDecimal.string(from: item.price as NSNumber)
 			amountTextField.text = "\(item.amount)"
 		}
 		else if let barcode = barcode {

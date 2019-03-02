@@ -27,7 +27,7 @@ class EditUserTableViewController: UITableViewController {
 	func readUser() -> User? {
 		if let name = nameTextField.text,
 		   let mail = mailTextField.text,
-		   let credit = Double(creditTextField.text ?? "") {
+		   let credit = NumberFormatter.localDecimal.number(from: creditTextField.text ?? "") as? Double {
 			var user = self.user!
 			user.name = name
 			user.mail = mail
@@ -47,8 +47,7 @@ class EditUserTableViewController: UITableViewController {
 			mailTextField.text = user.mail
 			idTextField.text = user._id
 			createdTextField.text = user.created
-
-			creditTextField.text = "\(user.credit)"
+			creditTextField.text = NumberFormatter.localDecimal.string(from: user.credit as NSNumber)
 		}
 
 		if #available(iOS 11.0, *) {
