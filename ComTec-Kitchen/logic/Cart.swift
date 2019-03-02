@@ -112,7 +112,32 @@ class Cart {
 		}
 	}
 
+	func updateAll() {
+		// pass 1: update amount and price
+		purchases.update { purchase in
+			if let item = Items.shared.get(id: purchase.item_id) {
+				purchase.amount = min(purchase.amount, item.amount)
+				purchase.itemPrice = item.price
+			}
+			else {
+				purchase.amount = 0
+			}
+		}
+
+		// pass 2: remove invalid purchases
+		purchases.removeAll {
+			$0.amount <= 0
+		}
+	}
+
 	// --------------- Communication ---------------
+
+	func refreshAll(completion: (() -> Void)? = nil) {
+		Items.shared.refreshAll {
+			self.updateAll()
+			completion?()
+		}
+	}
 
 	func submit() {
 		for purchase in purchases {
