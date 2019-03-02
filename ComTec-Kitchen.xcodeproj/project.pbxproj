@@ -30,6 +30,7 @@
 		1B0A19B117CBDAC43291282B /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A161061CE7F9F88F45151 /* MainTabBarController.swift */; };
 		1B0A1A7939195BE6DAD0BE87 /* AttributedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1E4701E26FC1AF129BD2 /* AttributedStrings.swift */; };
 		1B0A1AF29BC1FBF858ACF087 /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1887773C9AA47A552ADE /* Purchase.swift */; };
+		1B0A1B48084532A0BCA9DBBC /* Arrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A10BB151AF1F04A5629E1 /* Arrays.swift */; };
 		1B0A1BFC3915B5BC7DE88905 /* PurchasesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1D90220FB0471AE84EB5 /* PurchasesTableViewController.swift */; };
 		1B0A1C10F7045E6ACAF9911C /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B0A1968BA214EDC5022BB91 /* ItemCell.xib */; };
 		1B0A1C45155DFA3FD46872E0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A19DC72237BCE441F393A /* Item.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B0A10BB151AF1F04A5629E1 /* Arrays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Arrays.swift; path = ext/Arrays.swift; sourceTree = "<group>"; };
 		1B0A110BDEFFF9A6DCBEBB96 /* AccountsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountsTableViewController.swift; path = ui/table/AccountsTableViewController.swift; sourceTree = "<group>"; };
 		1B0A114EE5EE18B31CAAE880 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = logic/Users.swift; sourceTree = "<group>"; };
 		1B0A116843C81FC44B2803F8 /* AccountTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountTableViewController.swift; path = ui/table/AccountTableViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				1B0A143FB711193661CFE664 /* RefreshableTableViewController.swift */,
 				1B0A1D63E627C115B008D6A0 /* ScanViewController.swift */,
 				1B0A19F473A8E4DB1E98A253 /* CurrencyFormat.swift */,
+				1B0A10BB151AF1F04A5629E1 /* Arrays.swift */,
 			);
 			path = "ComTec-Kitchen";
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				1B0A15B233780479851CFA65 /* RefreshableTableViewController.swift in Sources */,
 				1B0A175FD2B4ACA4F27B2C2F /* ScanViewController.swift in Sources */,
 				1B0A120E2BE777FD2FC18CDC /* CurrencyFormat.swift in Sources */,
+				1B0A1B48084532A0BCA9DBBC /* Arrays.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
