@@ -35,6 +35,17 @@ class ShopTableViewController: DictTableViewController<Item> {
 		navigationItem.rightBarButtonItem = Session.shared.isAdmin() ? editButtonItem : nil
 	}
 
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+
+		if let myDelegate = UIApplication.shared.delegate as? AppDelegate,
+		   let shortcutItem = myDelegate.shortcutItem,
+		   shortcutItem.type == "ScanBarcode" {
+			myDelegate.shortcutItem = nil
+			self.performSegue(withIdentifier: "ScanItem", sender: self)
+		}
+	}
+
 	override func setEditing(_ editing: Bool, animated: Bool) {
 		super.setEditing(editing, animated: animated)
 		navigationItem.leftBarButtonItem = editing ? addButtonItem : cameraButtonItem

@@ -33,6 +33,19 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>ScanBarcode</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Scan Barcode</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Scan to buy an Item</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeCapturePhoto</string>
+		</dict>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
