@@ -1014,7 +1014,10 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <state key="normal" title="Create an Account"/>
                                     <connections>
-                                        <segue destination="UPF-MI-71G" kind="show" identifier="CreateAccount" id="moi-O4-rZR"/>
+                                        <segue destination="UPF-MI-71G" kind="show" identifier="CreateAccount" id="moi-O4-rZR">
+                                            <segue key="commit" inheritsFrom="parent" id="943-Kt-Je4"/>
+                                            <segue key="preview" inheritsFrom="commit" id="HmU-MV-RON"/>
+                                        </segue>
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9n-kA-oVV">
@@ -1072,7 +1075,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6VZ-GG-rXL">
-                                <rect key="frame" x="16" y="200" width="343" height="267.5"/>
+                                <rect key="frame" x="16" y="80" width="343" height="273.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create an Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plU-oL-U9f">
                                         <rect key="frame" x="75.5" y="0.0" width="192" height="29"/>
@@ -1120,7 +1123,8 @@
                                         <rect key="frame" x="147" y="198.5" width="51" height="31"/>
                                     </switch>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZJ-Dc-b9y">
-                                        <rect key="frame" x="147" y="237.5" width="49" height="30"/>
+                                        <rect key="frame" x="140.5" y="237.5" width="62" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Submit"/>
                                         <connections>
                                             <action selector="submitButtonTapped:" destination="UPF-MI-71G" eventType="touchUpInside" id="JHn-T3-5sv"/>
@@ -1135,11 +1139,11 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="cPu-ck-eYF" firstAttribute="trailing" secondItem="6VZ-GG-rXL" secondAttribute="trailing" constant="16" id="DUf-Py-Uwp"/>
                             <constraint firstItem="6VZ-GG-rXL" firstAttribute="leading" secondItem="cPu-ck-eYF" secondAttribute="leading" constant="16" id="RTR-3L-STe"/>
-                            <constraint firstItem="6VZ-GG-rXL" firstAttribute="centerY" secondItem="ctj-pR-uQS" secondAttribute="centerY" id="gsc-e1-oO1"/>
+                            <constraint firstItem="6VZ-GG-rXL" firstAttribute="top" secondItem="cPu-ck-eYF" secondAttribute="top" constant="16" id="mo6-xt-rqQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cPu-ck-eYF"/>
                     </view>
@@ -1214,8 +1218,8 @@
         <image name="users-filled" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EJB-sW-lq8"/>
-        <segue reference="rtQ-Kq-LKG"/>
+        <segue reference="ZDo-zH-Qts"/>
+        <segue reference="moi-O4-rZR"/>
         <segue reference="aUc-eH-MmJ"/>
     </inferredMetricsTieBreakers>
 </document>
