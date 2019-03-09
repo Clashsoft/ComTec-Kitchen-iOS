@@ -18,6 +18,12 @@ class SignupViewController: UIViewController {
 
 	// =============== Methods ===============
 
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		nameTextField.addTarget(mailTextField, action: #selector(becomeFirstResponder), for: .editingDidEndOnExit)
+		mailTextField.addTarget(mailTextField, action: #selector(resignFirstResponder), for: .editingDidEndOnExit)
+	}
+
 	@IBAction func editingChanged(_ sender: UITextField) {
 		let nameEntered = !(nameTextField.text ?? "").isEmpty
 		let mailEntered = !(mailTextField.text ?? "").isEmpty

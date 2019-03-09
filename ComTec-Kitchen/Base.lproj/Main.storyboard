@@ -1090,7 +1090,7 @@
                                         <rect key="frame" x="0.0" y="65.5" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="username"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="username"/>
                                         <connections>
                                             <action selector="editingChanged:" destination="UPF-MI-71G" eventType="editingChanged" id="HEG-nG-5DF"/>
                                         </connections>
@@ -1105,7 +1105,7 @@
                                         <rect key="frame" x="0.0" y="132" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="email"/>
                                         <connections>
                                             <action selector="editingChanged:" destination="UPF-MI-71G" eventType="editingChanged" id="bWJ-V1-YKg"/>
                                         </connections>
