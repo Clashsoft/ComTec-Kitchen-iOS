@@ -35,6 +35,7 @@
 		1B0A1C10F7045E6ACAF9911C /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B0A1968BA214EDC5022BB91 /* ItemCell.xib */; };
 		1B0A1C45155DFA3FD46872E0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A19DC72237BCE441F393A /* Item.swift */; };
 		1B0A1C894F7D07A663BCBDE1 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1C19E5BD6E5FB1FDF45D /* Session.swift */; };
+		1B0A1CF2769E13BD584535E1 /* LocalizableString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1BA6FB5B7DF3D96E6EFB /* LocalizableString.swift */; };
 		1B0A1CF477D3F69876DC3C02 /* TableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1AA560D56C9571C323D2 /* TableViews.swift */; };
 		1B0A1DD6172D19491BA105D6 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1885DC87C59EB35F4B05 /* UsersTableViewController.swift */; };
 		1B0A1EC2AC329F4EF30A36D1 /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0A1F7FBF39059639FC29E2 /* CartTableViewController.swift */; };
@@ -45,6 +46,7 @@
 		3631152B2221A87C005DC2B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 363115292221A87C005DC2B5 /* Main.storyboard */; };
 		3631152D2221A87D005DC2B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3631152C2221A87D005DC2B5 /* Assets.xcassets */; };
 		363115302221A87D005DC2B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3631152E2221A87D005DC2B5 /* LaunchScreen.storyboard */; };
+		3698F9DA2235335400301419 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3698F9D82235335400301419 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,7 @@
 		1B0A1A023CD7173ECB11C43D /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LaunchViewController.swift; path = ui/LaunchViewController.swift; sourceTree = "<group>"; };
 		1B0A1AA560D56C9571C323D2 /* TableViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViews.swift; path = ext/TableViews.swift; sourceTree = "<group>"; };
 		1B0A1B72EE7227CFE9A8D928 /* EditItemTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditItemTableViewController.swift; path = ui/edit/EditItemTableViewController.swift; sourceTree = "<group>"; };
+		1B0A1BA6FB5B7DF3D96E6EFB /* LocalizableString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizableString.swift; path = ext/LocalizableString.swift; sourceTree = "<group>"; };
 		1B0A1C19E5BD6E5FB1FDF45D /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = logic/Session.swift; sourceTree = "<group>"; };
 		1B0A1CA69796800681855964 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Preferences.swift; path = logic/Preferences.swift; sourceTree = "<group>"; };
 		1B0A1D63E627C115B008D6A0 /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScanViewController.swift; path = ui/ScanViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +94,8 @@
 		363115312221A87D005DC2B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		36786B5222348A6E0021437C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		36786B5322348A6E0021437C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3698F9D92235335400301419 /* Base */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3698F9DB2235338000301419 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +168,8 @@
 				1B0A1D63E627C115B008D6A0 /* ScanViewController.swift */,
 				1B0A19F473A8E4DB1E98A253 /* CurrencyFormat.swift */,
 				1B0A10BB151AF1F04A5629E1 /* Arrays.swift */,
+				3698F9D82235335400301419 /* Localizable.strings */,
+				1B0A1BA6FB5B7DF3D96E6EFB /* LocalizableString.swift */,
 			);
 			path = "ComTec-Kitchen";
 			sourceTree = "<group>";
@@ -209,6 +216,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 363115172221A87B005DC2B5;
 			productRefGroup = 363115212221A87B005DC2B5 /* Products */;
@@ -225,6 +233,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3698F9DA2235335400301419 /* Localizable.strings in Resources */,
 				363115302221A87D005DC2B5 /* LaunchScreen.storyboard in Resources */,
 				3631152D2221A87D005DC2B5 /* Assets.xcassets in Resources */,
 				3631152B2221A87C005DC2B5 /* Main.storyboard in Resources */,
@@ -273,6 +282,7 @@
 				1B0A175FD2B4ACA4F27B2C2F /* ScanViewController.swift in Sources */,
 				1B0A120E2BE777FD2FC18CDC /* CurrencyFormat.swift in Sources */,
 				1B0A1B48084532A0BCA9DBBC /* Arrays.swift in Sources */,
+				1B0A1CF2769E13BD584535E1 /* LocalizableString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +305,15 @@
 				36786B5322348A6E0021437C /* de */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3698F9D82235335400301419 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3698F9D92235335400301419 /* Base */,
+				3698F9DB2235338000301419 /* de */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

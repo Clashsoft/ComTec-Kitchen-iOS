@@ -27,7 +27,7 @@ class UsersTableViewController: DictTableViewController<User>, UISearchResultsUp
 		// Setup the Search Controller
 		searchController.searchResultsUpdater = self
 		searchController.obscuresBackgroundDuringPresentation = false
-		searchController.searchBar.placeholder = "Search Users"
+		searchController.searchBar.placeholder = "users.search.placeholder".localized
 		navigationItem.searchController = searchController
 		definesPresentationContext = true
 	}
@@ -74,7 +74,7 @@ class UsersTableViewController: DictTableViewController<User>, UISearchResultsUp
 		let user = getItem(at: indexPath)
 
 		if user._id == Session.shared.getLoggedInUser()?._id {
-			cell.nameLabel.attributedText = user.name + " me".colored(.gray)
+			cell.nameLabel.attributedText = user.name + " " + "users.me".localized.colored(.gray)
 		}
 		else {
 			cell.nameLabel.text = user.name

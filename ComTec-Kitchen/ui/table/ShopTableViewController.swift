@@ -79,12 +79,9 @@ class ShopTableViewController: DictTableViewController<Item> {
 		let cartAmount = Cart.shared.getAmount(of: item)
 
 		cell.nameLabel.text = item.name
-		if item.amount <= 0 {
-			cell.descriptionLabel.text = "not available"
-		}
-		else {
-			cell.descriptionLabel.text = "\(item.amount) available"
-		}
+		cell.descriptionLabel.text = item.amount == 0
+			? "item.available.0".localized
+			: "item.available.n".localizedFormat(item.amount)
 
 		switch cartAmount {
 			case 0:

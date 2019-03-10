@@ -92,7 +92,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
 	func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
 		if metadataObjects.isEmpty {
 			qrCodeFrameView.frame = .zero
-			infoLabel.text = "No Barcode detected"
+			infoLabel.text = "scan.no_barcode".localized
 			return
 		}
 
@@ -117,8 +117,8 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
 		}
 
 		if let item = Items.shared.get(id: barcode) {
-			let title = "Add '\(item.name)' to Cart"
-			let message = "What amount do you want to add?"
+			let title = "scan.add_to_cart.title".localizedFormat(item.name)
+			let message = "scan.add_to_cart.message".localized
 			let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
 			alert.addTextField() { field in
@@ -126,7 +126,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
 				field.keyboardType = .numberPad
 			}
 
-			alert.addAction(UIAlertAction(title: "OK", style: .default) { action in
+			alert.addAction(UIAlertAction(title: "scan.add_to_cart.ok", style: .default) { action in
 				if let textField = alert.textFields?[0] {
 					let amount = Int(textField.text ?? "") ?? 1
 
@@ -134,7 +134,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
 					CartTableViewController.refreshBadge(self.tabBarController)
 				}
 			})
-			alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+			alert.addAction(UIAlertAction(title: "scan.add_to_cart.cancel", style: .cancel))
 
 			self.present(alert, animated: true)
 		}

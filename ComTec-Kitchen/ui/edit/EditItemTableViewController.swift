@@ -56,7 +56,7 @@ class EditItemTableViewController: UITableViewController {
 
 		if let item = item {
 			edit = true
-			title = "Edit Item"
+			title = "edit_item.title".localized
 			idTextField.isEnabled = false
 			idTextField.textColor = .lightGray
 
@@ -68,7 +68,7 @@ class EditItemTableViewController: UITableViewController {
 		}
 		else if let barcode = barcode {
 			edit = false
-			title = "Add Item"
+			title = "add_item.title".localized
 			idTextField.isEnabled = false
 			idTextField.textColor = .lightGray
 
@@ -76,7 +76,7 @@ class EditItemTableViewController: UITableViewController {
 		}
 		else {
 			edit = false
-			title = "Add Item"
+			title = "add_item.title".localized
 			idTextField.isEnabled = true
 			idTextField.textColor = .black
 		}

@@ -1,0 +1,42 @@
+/*
+  Localizable.strings
+  ComTec-Kitchen
+
+  Created by Adrian Kunz on 2019-03-10.
+  Copyright © 2019 Clashsoft. All rights reserved.
+*/
+
+// --------------- Shop ---------------
+
+"item.available.0" = "not available";
+"item.available.n" = "%d available";
+
+"add_item.title" = "Add Item";
+"edit_item.title" = "Edit Item";
+
+// --------------- Barcode Scan ---------------
+
+"scan.no_barcode" = "No Barcode detected";
+"scan.add_to_cart.title" = "Add '%s' to Cart";
+"scan.add_to_cart.message" = "What amount do you want to add?";
+"scan.add_to_cart.ok" = "OK";
+"scan.add_to_cart.cancel" = "Cancel";
+
+// --------------- Cart ---------------
+
+"cart.submit.title" = "Buy";
+"cart.submit.message.1" = "Are you sure you want to buy this item for %s ?";
+"cart.submit.message.n" = "Are you sure you want to buy %d items for %s ?";
+"cart.submit.yes" = "Yes";
+"cart.submit.cancel" = "Cancel";
+
+"cart.clear.title" = "Clear Cart";
+"cart.clear.message.1" = "Are you sure you want to remove this item from the cart?";
+"cart.clear.message.n" = "Are you sure you want to remove %d items from the cart?";
+"cart.clear.yes" = "Yes";
+"cart.clear.cancel" = "Cancel";
+
+// --------------- Users ---------------
+
+"users.search.placeholder" = "Search Users";
+"users.me" = "me";

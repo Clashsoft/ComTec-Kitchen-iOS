@@ -39,17 +39,19 @@ class CartTableViewController: DictTableViewController<Purchase> {
 		}
 
 		let total = Cart.shared.getTotal()
-		let title = "Buy"
-		let message = "Are you sure you want to buy \(totalAmount) item\(totalAmount == 1 ? "" : "s") for \(total.€) ?"
+		let title = "cart.submit.title".localized
+		let message = totalAmount == 1
+			? "cart.submit.message.1".localizedFormat(total.€)
+			: "cart.submit.message.n".localizedFormat(totalAmount, total.€)
 
 		let dialog = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
-		dialog.addAction(UIAlertAction(title: "Yes", style: .default) { (_) in
+		dialog.addAction(UIAlertAction(title: "cart.submit.yes".localized, style: .default) { (_) in
 			Cart.shared.submit()
 			self.refresh()
 		})
 
-		dialog.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+		dialog.addAction(UIAlertAction(title: "cart.submit.cancel".localized, style: .cancel))
 
 		self.present(dialog, animated: true, completion: nil)
 	}
@@ -60,17 +62,19 @@ class CartTableViewController: DictTableViewController<Purchase> {
 			return
 		}
 
-		let title = "Clear Cart"
-		let message = "Are you sure you want to remove \(totalAmount) item\(totalAmount == 1 ? "" : "s") from the cart?"
+		let title = "cart.clear.title".localized
+		let message = totalAmount == 1
+			? "cart.clear.message.1".localized
+			: "cart.clear.message.n".localizedFormat(totalAmount)
 
 		let dialog = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
-		dialog.addAction(UIAlertAction(title: "Yes", style: .destructive) { (_) in
+		dialog.addAction(UIAlertAction(title: "cart.clear.yes".localized, style: .destructive) { (_) in
 			Cart.shared.clear()
 			self.refresh()
 		})
 
-		dialog.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+		dialog.addAction(UIAlertAction(title: "cart.clear.cancel".localized, style: .cancel))
 
 		self.present(dialog, animated: true, completion: nil)
 	}
@@ -97,9 +101,12 @@ class CartTableViewController: DictTableViewController<Purchase> {
 		let purchase = getItem(at: indexPath)
 		let item = Items.shared.get(id: purchase.item_id)
 		let itemName = item?.name ?? purchase.item_id
+		let amountAvailable = item?.amount ?? 0
 
 		cell.nameLabel.text = itemName
-		cell.descriptionLabel.text = "\(item?.amount ?? 0) available"
+		cell.descriptionLabel.text = amountAvailable == 0
+			? "item.available.0".localized
+			: "item.available.n".localizedFormat(amountAvailable)
 		cell.topRightLabel.text = "\(purchase.amount) × \(purchase.itemPrice.€)"
 		cell.bottomRightLabel.text = purchase.total.€
 
