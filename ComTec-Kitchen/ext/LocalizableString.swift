@@ -15,6 +15,6 @@ extension String {
 	}
 
 	func localizedFormat(_ args: CVarArg...) -> String {
-		return String.localizedStringWithFormat(self.localized, args)
+		return String(format: self.localized, locale: .current, arguments: args)
 	}
 }

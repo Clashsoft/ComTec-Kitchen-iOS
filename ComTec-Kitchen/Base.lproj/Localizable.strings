@@ -17,7 +17,7 @@
 // --------------- Barcode Scan ---------------
 
 "scan.no_barcode" = "No Barcode detected";
-"scan.add_to_cart.title" = "Add '%s' to Cart";
+"scan.add_to_cart.title" = "Add '%@' to Cart";
 "scan.add_to_cart.message" = "What amount do you want to add?";
 "scan.add_to_cart.ok" = "OK";
 "scan.add_to_cart.cancel" = "Cancel";
@@ -25,8 +25,8 @@
 // --------------- Cart ---------------
 
 "cart.submit.title" = "Buy";
-"cart.submit.message.1" = "Are you sure you want to buy this item for %s ?";
-"cart.submit.message.n" = "Are you sure you want to buy %d items for %s ?";
+"cart.submit.message.1" = "Are you sure you want to buy this item for %@ ?";
+"cart.submit.message.n" = "Are you sure you want to buy %d items for %@ ?";
 "cart.submit.yes" = "Yes";
 "cart.submit.cancel" = "Cancel";
 
