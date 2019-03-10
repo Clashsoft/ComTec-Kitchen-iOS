@@ -126,7 +126,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
 				field.keyboardType = .numberPad
 			}
 
-			alert.addAction(UIAlertAction(title: "scan.add_to_cart.ok", style: .default) { action in
+			alert.addAction(UIAlertAction(title: "scan.add_to_cart.ok".localized, style: .default) { action in
 				if let textField = alert.textFields?[0] {
 					let amount = Int(textField.text ?? "") ?? 1
 
@@ -134,7 +134,7 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
 					CartTableViewController.refreshBadge(self.tabBarController)
 				}
 			})
-			alert.addAction(UIAlertAction(title: "scan.add_to_cart.cancel", style: .cancel))
+			alert.addAction(UIAlertAction(title: "scan.add_to_cart.cancel".localized, style: .cancel))
 
 			self.present(alert, animated: true)
 		}
