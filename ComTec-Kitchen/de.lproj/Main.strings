@@ -3,16 +3,16 @@
 "0S9-i2-Skr.text" = "2018-12-31T12:34:56.789Z";
 
 /* Class = "UILabel"; text = "Username"; ObjectID = "0jh-79-3RN"; */
-"0jh-79-3RN.text" = "Username";
+"0jh-79-3RN.text" = "Benutzername";
 
 /* Class = "UILabel"; text = "Message"; ObjectID = "2Ii-X7-NUt"; */
-"2Ii-X7-NUt.text" = "Message";
+"2Ii-X7-NUt.text" = "Nachricht";
 
 /* Class = "UINavigationItem"; title = "Shop"; ObjectID = "3Kg-om-0Qe"; */
 "3Kg-om-0Qe.title" = "Shop";
 
 /* Class = "UILabel"; text = "Items Bought"; ObjectID = "534-r8-zF4"; */
-"534-r8-zF4.text" = "Items Bought";
+"534-r8-zF4.text" = "Käufe";
 
 /* Class = "UITextField"; placeholder = "john@apple.com"; ObjectID = "5l3-34-hS6"; */
 "5l3-34-hS6.placeholder" = "john@apple.com";
@@ -24,55 +24,55 @@
 "767-K4-qHX.text" = "E-Mail";
 
 /* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "7ZJ-Dc-b9y"; */
-"7ZJ-Dc-b9y.normalTitle" = "Submit";
+"7ZJ-Dc-b9y.normalTitle" = "Abschicken";
 
 /* Class = "UILabel"; text = "E-Mail"; ObjectID = "9YP-DV-otn"; */
 "9YP-DV-otn.text" = "E-Mail";
 
 /* Class = "UINavigationItem"; title = "Edit User"; ObjectID = "AJX-O1-mDu"; */
-"AJX-O1-mDu.title" = "Edit User";
+"AJX-O1-mDu.title" = "Benutzer bearbeiten";
 
 /* Class = "UILabel"; text = "Username"; ObjectID = "Ahv-Jd-xTn"; */
-"Ahv-Jd-xTn.text" = "Username";
+"Ahv-Jd-xTn.text" = "Benutzername";
 
 /* Class = "UILabel"; text = "Credit"; ObjectID = "AjB-9F-KQp"; */
-"AjB-9F-KQp.text" = "Credit";
+"AjB-9F-KQp.text" = "Guthaben";
 
 /* Class = "UILabel"; text = "Subtitle"; ObjectID = "BJm-kD-Plw"; */
-"BJm-kD-Plw.text" = "Subtitle";
+"BJm-kD-Plw.text" = "Untertitel";
 
 /* Class = "UILabel"; text = "1234.50 €"; ObjectID = "C5c-o9-SWK"; */
 "C5c-o9-SWK.text" = "1234.50 €";
 
 /* Class = "UILabel"; text = "Kind"; ObjectID = "C9a-5B-Row"; */
-"C9a-5B-Row.text" = "Kind";
+"C9a-5B-Row.text" = "Kategorie";
 
 /* Class = "UIBarButtonItem"; title = "Submit"; ObjectID = "Ez2-fG-rAl"; */
-"Ez2-fG-rAl.title" = "Submit";
+"Ez2-fG-rAl.title" = "Abschicken";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "KbH-Ct-Kkr"; */
-"KbH-Ct-Kkr.text" = "Title";
+"KbH-Ct-Kkr.text" = "Titel";
 
 /* Class = "UILabel"; text = "1234"; ObjectID = "NwY-Fi-d2Q"; */
 "NwY-Fi-d2Q.text" = "1234";
 
 /* Class = "UILabel"; text = "Price"; ObjectID = "Oen-k6-mit"; */
-"Oen-k6-mit.text" = "Price";
+"Oen-k6-mit.text" = "Preis";
 
 /* Class = "UIBarButtonItem"; title = "Switch"; ObjectID = "OmS-lQ-O6N"; */
-"OmS-lQ-O6N.title" = "Switch";
+"OmS-lQ-O6N.title" = "Wechseln";
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "PNd-Ka-gXm"; */
 "PNd-Ka-gXm.text" = "Name";
 
 /* Class = "UILabel"; text = "Subtitle"; ObjectID = "QlT-ic-yNb"; */
-"QlT-ic-yNb.text" = "Subtitle";
+"QlT-ic-yNb.text" = "Untertitel";
 
 /* Class = "UITableViewSection"; headerTitle = "General"; ObjectID = "SA0-33-znE"; */
-"SA0-33-znE.headerTitle" = "General";
+"SA0-33-znE.headerTitle" = "Allgemein";
 
 /* Class = "UILabel"; text = "Total Spent"; ObjectID = "T02-Q0-klg"; */
-"T02-Q0-klg.text" = "Total Spent";
+"T02-Q0-klg.text" = "Ausgaben";
 
 /* Class = "UITextField"; placeholder = "JohnAppleseed"; ObjectID = "TrY-0a-Rgt"; */
 "TrY-0a-Rgt.placeholder" = "JohnAppleseed";
@@ -84,10 +84,10 @@
 "WUK-Ve-cOQ.text" = "1358942097";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "WUa-Vt-mci"; */
-"WUa-Vt-mci.text" = "Title";
+"WUa-Vt-mci.text" = "Titel";
 
 /* Class = "UILabel"; text = "Created"; ObjectID = "X7g-kC-HqI"; */
-"X7g-kC-HqI.text" = "Created";
+"X7g-kC-HqI.text" = "Angelegt";
 
 /* Class = "UILabel"; text = "john@apple.com"; ObjectID = "XS3-Vy-WPV"; */
 "XS3-Vy-WPV.text" = "john@apple.com";
@@ -96,22 +96,22 @@
 "XgE-CG-0J7.placeholder" = "10.00";
 
 /* Class = "UINavigationItem"; title = "Cart"; ObjectID = "YXj-Ml-j7j"; */
-"YXj-Ml-j7j.title" = "Cart";
+"YXj-Ml-j7j.title" = "Einkaufswagen";
 
 /* Class = "UITabBarItem"; title = "Cart"; ObjectID = "YwO-tf-5am"; */
-"YwO-tf-5am.title" = "Cart";
+"YwO-tf-5am.title" = "Einkaufswagen";
 
 /* Class = "UILabel"; text = "E-Mail"; ObjectID = "bYu-xR-uKZ"; */
 "bYu-xR-uKZ.text" = "E-Mail";
 
 /* Class = "UILabel"; text = "Credit"; ObjectID = "c9r-q5-STe"; */
-"c9r-q5-STe.text" = "Credit";
+"c9r-q5-STe.text" = "Guthaben";
 
 /* Class = "UITextField"; placeholder = "10.00"; ObjectID = "cpw-Ev-pYj"; */
 "cpw-Ev-pYj.placeholder" = "10.00";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "d7C-J6-1lu"; */
-"d7C-J6-1lu.text" = "Title";
+"d7C-J6-1lu.text" = "Titel";
 
 /* Class = "UITableViewSection"; headerTitle = "Shop"; ObjectID = "eDM-Pb-mvB"; */
 "eDM-Pb-mvB.headerTitle" = "Shop";
@@ -132,49 +132,49 @@
 "fXe-gm-uz0.text" = "Name";
 
 /* Class = "UILabel"; text = "Purchase History"; ObjectID = "iQg-Fa-9v2"; */
-"iQg-Fa-9v2.text" = "Purchase History";
+"iQg-Fa-9v2.text" = "Kaufhistorie";
 
 /* Class = "UINavigationItem"; title = "Users"; ObjectID = "kOt-vJ-dCq"; */
-"kOt-vJ-dCq.title" = "Users";
+"kOt-vJ-dCq.title" = "Benutzer";
 
 /* Class = "UINavigationItem"; title = "Edit Item"; ObjectID = "kPg-85-MFL"; */
-"kPg-85-MFL.title" = "Edit Item";
+"kPg-85-MFL.title" = "Artikel bearbeiten";
 
 /* Class = "UINavigationItem"; title = "Account"; ObjectID = "kQa-ph-1HD"; */
 "kQa-ph-1HD.title" = "Account";
 
 /* Class = "UITableViewController"; title = "Purchase History"; ObjectID = "msU-Bk-iys"; */
-"msU-Bk-iys.title" = "Purchase History";
+"msU-Bk-iys.title" = "Kaufhistorie";
 
 /* Class = "UITabBarItem"; title = "Users"; ObjectID = "muU-3T-5NJ"; */
-"muU-3T-5NJ.title" = "Users";
+"muU-3T-5NJ.title" = "Benutzer";
 
 /* Class = "UILabel"; text = "Created"; ObjectID = "nXw-d6-hrz"; */
-"nXw-d6-hrz.text" = "Created";
+"nXw-d6-hrz.text" = "Angelegt";
 
 /* Class = "UILabel"; text = "or"; ObjectID = "o9n-kA-oVV"; */
-"o9n-kA-oVV.text" = "or";
+"o9n-kA-oVV.text" = "oder";
 
 /* Class = "UITextField"; placeholder = "Water"; ObjectID = "pLa-G9-euS"; */
-"pLa-G9-euS.placeholder" = "Water";
+"pLa-G9-euS.placeholder" = "Wasser";
 
 /* Class = "UILabel"; text = "Create an Account"; ObjectID = "plU-oL-U9f"; */
-"plU-oL-U9f.text" = "Create an Account";
+"plU-oL-U9f.text" = "Account anlegen";
 
 /* Class = "UILabel"; text = "Amount Available"; ObjectID = "ptn-nB-qiW"; */
-"ptn-nB-qiW.text" = "Amount Available";
+"ptn-nB-qiW.text" = "Stückzahl";
 
 /* Class = "UILabel"; text = "ID"; ObjectID = "qKb-tK-pDL"; */
 "qKb-tK-pDL.text" = "ID";
 
 /* Class = "UITextField"; placeholder = "My Item"; ObjectID = "r7V-ja-uDm"; */
-"r7V-ja-uDm.placeholder" = "My Item";
+"r7V-ja-uDm.placeholder" = "Mein Artikel";
 
 /* Class = "UILabel"; text = "Barcode / ID"; ObjectID = "rEV-B8-ljm"; */
 "rEV-B8-ljm.text" = "Barcode / ID";
 
 /* Class = "UITableViewController"; title = "Select Account"; ObjectID = "rgc-IJ-5m8"; */
-"rgc-IJ-5m8.title" = "Select Account";
+"rgc-IJ-5m8.title" = "Account auswählen";
 
 /* Class = "UITextField"; placeholder = "john@apple.com"; ObjectID = "tq3-8c-TB4"; */
 "tq3-8c-TB4.placeholder" = "john@apple.com";
@@ -186,31 +186,31 @@
 "u6p-KJ-lQh.title" = "Account";
 
 /* Class = "UITableViewSection"; headerTitle = "Credit"; ObjectID = "u9a-Ox-LbD"; */
-"u9a-Ox-LbD.headerTitle" = "Credit";
+"u9a-Ox-LbD.headerTitle" = "Guthaben";
 
 /* Class = "UILabel"; text = "ID"; ObjectID = "wm3-9O-qnj"; */
 "wm3-9O-qnj.text" = "ID";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "wuM-PD-aaw"; */
-"wuM-PD-aaw.text" = "Title";
+"wuM-PD-aaw.text" = "Titel";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "xNK-w7-1PJ"; */
-"xNK-w7-1PJ.text" = "Title";
+"xNK-w7-1PJ.text" = "Titel";
 
 /* Class = "UILabel"; text = "Subtitle"; ObjectID = "xgX-4Q-kYw"; */
-"xgX-4Q-kYw.text" = "Subtitle";
+"xgX-4Q-kYw.text" = "Untertitel";
 
 /* Class = "UITableViewController"; title = "Edit Item"; ObjectID = "xl1-Jw-nCQ"; */
-"xl1-Jw-nCQ.title" = "Edit Item";
+"xl1-Jw-nCQ.title" = "Artikel bearbeiten";
 
 /* Class = "UIButton"; normalTitle = "Create an Account"; ObjectID = "yVO-eL-lXl"; */
-"yVO-eL-lXl.normalTitle" = "Create an Account";
+"yVO-eL-lXl.normalTitle" = "Account anlegen";
 
 /* Class = "UITableViewSection"; headerTitle = "About"; ObjectID = "yqf-f8-PZ0"; */
-"yqf-f8-PZ0.headerTitle" = "About";
+"yqf-f8-PZ0.headerTitle" = "Über";
 
 /* Class = "UILabel"; text = "20.00 €"; ObjectID = "yxB-Fy-q5o"; */
 "yxB-Fy-q5o.text" = "20.00 €";
 
 /* Class = "UILabel"; text = "Subtitle"; ObjectID = "zd8-D5-5G9"; */
-"zd8-D5-5G9.text" = "Subtitle";
+"zd8-D5-5G9.text" = "Untertitel";
