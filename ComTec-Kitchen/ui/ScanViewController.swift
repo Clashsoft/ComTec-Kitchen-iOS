@@ -130,8 +130,9 @@ class ScanViewController: UIViewController, AVCaptureMetadataOutputObjectsDelega
 				if let textField = alert.textFields?[0] {
 					let amount = Int(textField.text ?? "") ?? 1
 
-					Cart.shared.add(item: item, amount: amount)
-					CartTableViewController.refreshBadge(self.tabBarController)
+					if Cart.shared.add(item: item, amount: amount) > 0 {
+						CartTableViewController.refreshBadge(self.tabBarController)
+					}
 				}
 			})
 			alert.addAction(UIAlertAction(title: "scan.add_to_cart.cancel".localized, style: .cancel))
