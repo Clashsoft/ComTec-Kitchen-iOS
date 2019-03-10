@@ -47,6 +47,7 @@
 		3631152D2221A87D005DC2B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3631152C2221A87D005DC2B5 /* Assets.xcassets */; };
 		363115302221A87D005DC2B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3631152E2221A87D005DC2B5 /* LaunchScreen.storyboard */; };
 		3698F9DA2235335400301419 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3698F9D82235335400301419 /* Localizable.strings */; };
+		3698F9E12235439800301419 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3698F9DF2235439800301419 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		36786B5322348A6E0021437C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		3698F9D92235335400301419 /* Base */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3698F9DB2235338000301419 /* de */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; lineEnding = 0; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3698F9E02235439800301419 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				1B0A10BB151AF1F04A5629E1 /* Arrays.swift */,
 				3698F9D82235335400301419 /* Localizable.strings */,
 				1B0A1BA6FB5B7DF3D96E6EFB /* LocalizableString.swift */,
+				3698F9DF2235439800301419 /* InfoPlist.strings */,
 			);
 			path = "ComTec-Kitchen";
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3698F9DA2235335400301419 /* Localizable.strings in Resources */,
+				3698F9E12235439800301419 /* InfoPlist.strings in Resources */,
 				363115302221A87D005DC2B5 /* LaunchScreen.storyboard in Resources */,
 				3631152D2221A87D005DC2B5 /* Assets.xcassets in Resources */,
 				3631152B2221A87C005DC2B5 /* Main.storyboard in Resources */,
@@ -314,6 +318,14 @@
 				3698F9DB2235338000301419 /* de */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		3698F9DF2235439800301419 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3698F9E02235439800301419 /* de */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

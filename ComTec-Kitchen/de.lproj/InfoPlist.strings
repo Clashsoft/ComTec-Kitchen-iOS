@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  ComTec-Kitchen
+
+  Created by Adrian Kunz on 2019-03-10.
+  Copyright © 2019 Clashsoft. All rights reserved.
+*/
+CFBundleDisplayName = "Küche";
+NSCameraUsageDescription = "Kamerazugriff wird für das Scannen von Barcodes benötigt";
+"Scan Barcode" = "Barcode scannen";
+"Scan to buy an Item" = "um Artikel zu kaufen";
