@@ -15,10 +15,11 @@ class CartTableViewController: DictTableViewController<Purchase> {
 		let empty = Cart.shared.isEmpty()
 		let badgeValue = empty ? nil : "\(Cart.shared.getTotalAmount())"
 		let barItem = tabBarController?.tabBar.items?[1]
+		let barImage: UIImage? = empty ? .cartFilled : .cartBuyingFilled
 
 		barItem?.badgeValue = badgeValue
-		barItem?.image = empty ? UIImage.cart : UIImage.cartBuying
-		barItem?.selectedImage = empty ? UIImage.cartFilled : UIImage.cartBuyingFilled
+		barItem?.image = barImage
+		barItem?.selectedImage = barImage
 	}
 
 	// =============== Methods ===============

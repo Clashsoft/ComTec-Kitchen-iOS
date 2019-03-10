@@ -837,7 +837,7 @@
         <scene sceneID="IBs-7l-YxT">
             <objects>
                 <navigationController id="3ED-Dw-uFS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Users" image="users" selectedImage="users-filled" id="muU-3T-5NJ"/>
+                    <tabBarItem key="tabBarItem" title="Users" image="users-filled" id="muU-3T-5NJ"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pUA-tY-Hrx">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -910,7 +910,7 @@
         <scene sceneID="gGN-fF-9LG">
             <objects>
                 <navigationController id="HwD-dc-Ptn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Cart" image="cart" selectedImage="cart-filled" id="YwO-tf-5am"/>
+                    <tabBarItem key="tabBarItem" title="Cart" image="cart-filled" id="YwO-tf-5am"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gyr-hk-xwe">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -927,7 +927,7 @@
         <scene sceneID="jeK-EF-1Ao">
             <objects>
                 <navigationController id="Xut-pb-6nb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" image="account" selectedImage="account-filled" id="u6p-KJ-lQh"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="account-filled" id="u6p-KJ-lQh"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g8J-Js-EFa">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -944,7 +944,7 @@
         <scene sceneID="7lx-uP-fdu">
             <objects>
                 <navigationController id="ocD-38-iMJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Shop" image="fridge" selectedImage="fridge-filled" id="6dh-Tq-2KG"/>
+                    <tabBarItem key="tabBarItem" title="Shop" image="fridge-filled" id="6dh-Tq-2KG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vVN-kI-qp7">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1207,17 +1207,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="account" width="37.5" height="37.5"/>
         <image name="account-filled" width="37.5" height="37.5"/>
-        <image name="cart" width="37.5" height="37.5"/>
         <image name="cart-filled" width="37.5" height="37.5"/>
-        <image name="fridge" width="37.5" height="37.5"/>
         <image name="fridge-filled" width="37.5" height="37.5"/>
         <image name="history" width="37.5" height="37.5"/>
-        <image name="users" width="37.5" height="37.5"/>
         <image name="users-filled" width="37.5" height="37.5"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Xbf-PH-SRp"/>
         <segue reference="ZDo-zH-Qts"/>
         <segue reference="moi-O4-rZR"/>
         <segue reference="aUc-eH-MmJ"/>
