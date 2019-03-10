@@ -1,7 +1,42 @@
-/* 
+/*
   Localizable.strings
   ComTec-Kitchen
 
   Created by Adrian Kunz on 2019-03-10.
   Copyright © 2019 Clashsoft. All rights reserved.
 */
+
+// --------------- Shop ---------------
+
+"item.available.0" = "nicht verfügbar";
+"item.available.n" = "%d verfügbar";
+
+"add_item.title" = "Artikel hinzufügen";
+"edit_item.title" = "Artikel bearbeiten";
+
+// --------------- Barcode Scan ---------------
+
+"scan.no_barcode" = "Kein Barcode erkannt";
+"scan.add_to_cart.title" = "'%@' zum Einkaufswagen hinzufügen";
+"scan.add_to_cart.message" = "Welche Anzahl soll hinzugefügt werden?";
+"scan.add_to_cart.ok" = "OK";
+"scan.add_to_cart.cancel" = "Abbrechen";
+
+// --------------- Cart ---------------
+
+"cart.submit.title" = "Kaufen";
+"cart.submit.message.1" = "Sind Sie sicher, dass Sie diesen Artikel für %@ kaufen möchten?";
+"cart.submit.message.n" = "Sind Sie sicher, dass Sie %d Artikel für %@ kaufen möchten?";
+"cart.submit.yes" = "Ja";
+"cart.submit.cancel" = "Abbrechen";
+
+"cart.clear.title" = "Einkaufswagen leeren";
+"cart.clear.message.1" = "Sind Sie sicher, dass Sie diesen Artikel aus dem Einkaufswagen entfernen möchten?";
+"cart.clear.message.n" = "Sind Sie sicher, dass Sie %d Artikel aus dem Einkaufswagen entfernen möchten?";
+"cart.clear.yes" = "Ja";
+"cart.clear.cancel" = "Abbrechen";
+
+// --------------- Users ---------------
+
+"users.search.placeholder" = "Benutzer suchen";
+"users.me" = "ich";
